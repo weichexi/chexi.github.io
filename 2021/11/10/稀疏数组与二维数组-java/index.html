@@ -23,30 +23,33 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"manual","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="越努力，越幸运！">
-<meta property="og:type" content="website">
-<meta property="og:title" content="澈溪">
-<meta property="og:url" content="http://example.com/index.html">
+  <meta name="description" content="基本介绍   当一个数组中大部分元素为0，或者为同一个值得数组时，可以使用稀疏数组来保存该数组。  1 . 处理方法 1 . 记录数组中一共有几行吉列，有多少个不同的值 2 . 把具有不同值得元素得行列及值记录在一个小规模得数组中从而缩小程序得规模  2 . 应用实例 1 . 使用稀疏数组来保存类似于棋盘，地图等二维数组数据等等 2 . 把二维数组转换稀疏数组存盘，并且可以读取恢复原来得二维数组">
+<meta property="og:type" content="article">
+<meta property="og:title" content="稀疏数组与二维数组-java">
+<meta property="og:url" content="http://example.com/2021/11/10/%E7%A8%80%E7%96%8F%E6%95%B0%E7%BB%84%E4%B8%8E%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84-java/index.html">
 <meta property="og:site_name" content="澈溪">
-<meta property="og:description" content="越努力，越幸运！">
+<meta property="og:description" content="基本介绍   当一个数组中大部分元素为0，或者为同一个值得数组时，可以使用稀疏数组来保存该数组。  1 . 处理方法 1 . 记录数组中一共有几行吉列，有多少个不同的值 2 . 把具有不同值得元素得行列及值记录在一个小规模得数组中从而缩小程序得规模  2 . 应用实例 1 . 使用稀疏数组来保存类似于棋盘，地图等二维数组数据等等 2 . 把二维数组转换稀疏数组存盘，并且可以读取恢复原来得二维数组">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-11-10T08:54:17.000Z">
+<meta property="article:modified_time" content="2021-11-10T09:30:00.181Z">
 <meta property="article:author" content="chexi">
+<meta property="article:tag" content="算法与数据结构">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://example.com/">
+<link rel="canonical" href="http://example.com/2021/11/10/%E7%A8%80%E7%96%8F%E6%95%B0%E7%BB%84%E4%B8%8E%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84-java/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome : true,
-    isPost : false,
+    isHome : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>澈溪</title>
+  <title>稀疏数组与二维数组-java | 澈溪</title>
   
 
 
@@ -209,9 +212,10 @@
         <div class="content-wrap">
           
 
-          <div class="content index posts-expand">
+          <div class="content post posts-expand">
             
-      
+
+    
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
@@ -227,10 +231,9 @@
       <meta itemprop="name" content="澈溪">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/11/10/%E7%A8%80%E7%96%8F%E6%95%B0%E7%BB%84%E4%B8%8E%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84-java/" class="post-title-link" itemprop="url">稀疏数组与二维数组-java</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          稀疏数组与二维数组-java
+        </h1>
 
         <div class="post-meta">
 		
@@ -253,7 +256,14 @@
                 </span>
             </span>
 
-          <br>
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye 浏览次"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span><br>
             <span class="post-meta-item" title="本文字数">
               <span class="post-meta-item-icon">
                 <i class="far fa-file-word"></i>
@@ -278,7 +288,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <ol>
+        <ol>
 <li><h3 id="基本介绍"><a href="#基本介绍" class="headerlink" title="基本介绍"></a>基本介绍</h3></li>
 </ol>
 <blockquote>
@@ -296,110 +306,110 @@
 
 <p>总结：任何复杂程序只要经过研究处理，都会简单，实用化</p>
 
-      
     </div>
 
     
     
     
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
+        <div class="reward-container">
+  <div>原创技术分享，您的支持将鼓励我继续创作</div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
       
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/11/10/AnotherDay/">
+      <div style="display: inline-block;">
+        <img src="/images/wechatpay.png" alt="chexi 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="/images/alipay.png" alt="chexi 支付宝">
+        <p>支付宝</p>
+      </div>
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="chexi">
-      <meta itemprop="description" content="越努力，越幸运！">
-    </span>
+  </div>
+</div>
 
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="澈溪">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/11/10/AnotherDay/" class="post-title-link" itemprop="url">anotherDay</a>
-        </h2>
+        
 
-        <div class="post-meta">
-		
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>chexi
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://example.com/2021/11/10/%E7%A8%80%E7%96%8F%E6%95%B0%E7%BB%84%E4%B8%8E%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84-java/" title="稀疏数组与二维数组-java">http://example.com/2021/11/10/稀疏数组与二维数组-java/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
 
-              <time title="创建时间：2021-11-10 15:08:58 / 修改时间：17:09:35" itemprop="dateCreated datePublished" datetime="2021-11-10T15:08:58+08:00">2021-11-10</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/anotherDay/" itemprop="url" rel="index"><span itemprop="name">anotherDay</span></a>
-                </span>
-            </span>
+        
 
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>111</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
             </span>
 
+            <span class="label">RSS</span>
+          </a>
         </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="A-When-you-open-your-eyes-be-glad-for-the-day"><a href="#A-When-you-open-your-eyes-be-glad-for-the-day" class="headerlink" title="A . When you open your eyes be glad for the day !"></a>A . When you open your eyes be glad for the day !</h1><h1 id="B-Make-sure-you-have-ample-time-to-prepare-for-the-new-day-ahead！"><a href="#B-Make-sure-you-have-ample-time-to-prepare-for-the-new-day-ahead！" class="headerlink" title="B . Make sure you have ample time to prepare for the new day ahead！"></a>B . Make sure you have ample time to prepare for the new day ahead！</h1><h1 id="C-Do-you-get-me"><a href="#C-Do-you-get-me" class="headerlink" title="C . Do you get me !"></a>C . Do you get me !</h1><p>​                                                     <em>澈溪，因你而生</em></p>
-
-      
     </div>
+  </div>
 
+
+      
+        <div>
+          <div>
     
+        <div style="text-align:center;color: #ccc;font-size:24px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
     
-    
+</div>
+        </div>
+      
+
       <footer class="post-footer">
-        <div class="post-eof"></div>
+          <div class="post-tags">
+              <a href="/tags/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag"># 算法与数据结构</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/11/10/AnotherDay/" rel="prev" title="anotherDay">
+      <i class="fa fa-chevron-left"></i> anotherDay
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
       </footer>
+    
   </article>
   
   
-  
-
-
   
 
 
 
           </div>
           
+    
+  <div class="comments">
+    <div id="lv-container" data-id="city" data-uid="MTAyMC81NDY3MS8zMTE0Mg=="></div>
+  </div>
+  
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -446,6 +456,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%BB%8D"><span class="nav-number">1.</span> <span class="nav-text">基本介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-%E5%A4%84%E7%90%86%E6%96%B9%E6%B3%95"><span class="nav-number">1.1.</span> <span class="nav-text">1 . 处理方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-%E5%BA%94%E7%94%A8%E5%AE%9E%E4%BE%8B"><span class="nav-number">1.2.</span> <span class="nav-text">2 . 应用实例</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0"><span class="nav-number">1.3.</span> <span class="nav-text">3 . 代码实现</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -625,6 +636,21 @@
 
   
 
+<script>
+NexT.utils.loadComments(document.querySelector('#lv-container'), () => {
+  window.livereOptions = {
+    refer: location.pathname.replace(CONFIG.root, '').replace('index.html', '')
+  };
+  (function(d, s) {
+    var j, e = d.getElementsByTagName(s)[0];
+    if (typeof LivereTower === 'function') { return; }
+    j = d.createElement(s);
+    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+    j.async = true;
+    e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+});
+</script>
 
 </body>
 </html>
