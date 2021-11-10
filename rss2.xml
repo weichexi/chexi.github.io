@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:atom="http://www.w3.org/2005/Atom"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>澈溪</title>
+    <link>http://example.com/</link>
+    
+    <atom:link href="http://example.com/rss2.xml" rel="self" type="application/rss+xml"/>
+    
+    <description>越努力，越幸运！</description>
+    <pubDate>Wed, 10 Nov 2021 08:25:47 GMT</pubDate>
+    <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>anotherDay</title>
+      <link>http://example.com/2021/11/10/AnotherDay/</link>
+      <guid>http://example.com/2021/11/10/AnotherDay/</guid>
+      <pubDate>Wed, 10 Nov 2021 07:08:58 GMT</pubDate>
+      
+        
+        
+      <description>&lt;h1 id=&quot;A-When-you-open-your-eyes-be-glad-for-the-day&quot;&gt;&lt;a href=&quot;#A-When-you-open-your-eyes-be-glad-for-the-day&quot; class=&quot;headerlink&quot; title=&quot;A </description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<h1 id="A-When-you-open-your-eyes-be-glad-for-the-day"><a href="#A-When-you-open-your-eyes-be-glad-for-the-day" class="headerlink" title="A . When you open your eyes be glad for the day !"></a>A . When you open your eyes be glad for the day !</h1><h1 id="B-Make-sure-you-have-ample-time-to-prepare-for-the-new-day-ahead！"><a href="#B-Make-sure-you-have-ample-time-to-prepare-for-the-new-day-ahead！" class="headerlink" title="B . Make sure you have ample time to prepare for the new day ahead！"></a>B . Make sure you have ample time to prepare for the new day ahead！</h1><h1 id="C-Do-you-get-me"><a href="#C-Do-you-get-me" class="headerlink" title="C . Do you get me !"></a>C . Do you get me !</h1><p>​                                                     <em>澈溪，因你而生</em></p>]]></content:encoded>
+      
+      
+      <category domain="http://example.com/categories/anotherDay/">anotherDay</category>
+      
+      
+      <category domain="http://example.com/tags/Blog%EF%BC%8CGo%EF%BC%81/">Blog，Go！</category>
+      
+      
+      <comments>http://example.com/2021/11/10/AnotherDay/#disqus_thread</comments>
+      
+    </item>
+    
+  </channel>
+</rss>
