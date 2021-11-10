@@ -36,8 +36,8 @@
     
     <item>
       <title>anotherDay</title>
-      <link>http://example.com/2021/11/10/anotherDay/</link>
-      <guid>http://example.com/2021/11/10/anotherDay/</guid>
+      <link>http://example.com/2021/11/10/AnotherDay/</link>
+      <guid>http://example.com/2021/11/10/AnotherDay/</guid>
       <pubDate>Wed, 10 Nov 2021 07:08:58 GMT</pubDate>
       
         
@@ -54,7 +54,7 @@
       <category domain="http://example.com/tags/Blog%EF%BC%8CGo%EF%BC%81/">Blog，Go！</category>
       
       
-      <comments>http://example.com/2021/11/10/anotherDay/#disqus_thread</comments>
+      <comments>http://example.com/2021/11/10/AnotherDay/#disqus_thread</comments>
       
     </item>
     
