@@ -241,7 +241,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2021-11-12 17:48:31 / 修改时间：19:46:41" itemprop="dateCreated datePublished" datetime="2021-11-12T17:48:31+08:00">2021-11-12</time>
+              <time title="创建时间：2021-11-12 17:48:31 / 修改时间：19:48:53" itemprop="dateCreated datePublished" datetime="2021-11-12T17:48:31+08:00">2021-11-12</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -307,8 +307,7 @@
 <p>总结说明：在第一种思路中 : 它的缺陷在于无法重复的使用，只能使用一次，其根本原因在于指针的指向一直在往上走，没有重新调零，如果想要实现第一种思路，可以根据特定条件对指针进行调0，但是这样引申出来的问题太多了，从实用性来说，并不适合，但是从算法性来说的话，这是一个思考的过程，有兴趣可以研究研究。</p>
 <p>在第二种思路中 : 在思路一的方式上进行了巧妙的改变，将数组想象成一个环形的，也就是以环形数组的思维去实现它；在思路一的基础上，对指针进行了一个调整，front指向当前队列第一个元素，rear指向队列的最后一个数据的后一个位置，这样调整的意义在于，我们每次添加一个元素，rear都会改变，让rear指向最后一个元素的后一个位置，因为需要空一个一个空间来作为约定，这个约定具体是干嘛的？我只能说它是该算法的核心思想，是一种比较抽象的思维理念，不好用言语来形容，当rear的指向超过了队列最大存储数的范围，那么就对它进行调0，这么说也不太合适，可以把它想象成一个环形的，无论它怎么走都是在这个环里面，这里巧妙的使用了%，我们知道，一个数%另一个数，其取值范围始终在0到这个数之间，而%【取模】也是环形思想的最重要的部分，当然，环形数组其本质还是数组，当我们进行取值的时候，如果之前存入了值，取出并不代表数组里的元素被取出了，实际上，它是通过不停的对数组进行复制操作来完成存值和取值的。</p>
 <p>每日一句： <em>Action is the cure for fear, and hesitation and procrastination will continue to nourish fear</em></p>
-<p><em>文章支持: <a target="_blank" rel="noopener" href="http://www.atguigu.com/">尚硅谷</a> <a target="_blank" rel="noopener" href="http://www.atguigu.com/">http://www.atguigu.com/</a></em></p>
-<p>​               <em><a target="_blank" rel="noopener" href="https://fufulearningjourna.blog.csdn.net/">一只java小白白的奋斗史</a></em></p>
+<p><em>文章支持: <a target="_blank" rel="noopener" href="http://www.atguigu.com/">尚硅谷</a> <a target="_blank" rel="noopener" href="http://www.atguigu.com/">http://www.atguigu.com/</a></em> <em><a target="_blank" rel="noopener" href="https://fufulearningjourna.blog.csdn.net/">一只java小白白的奋斗史</a></em></p>
 
       
     </div>
