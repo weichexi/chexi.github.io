@@ -23,30 +23,35 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"manual","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="越努力，越幸运！">
-<meta property="og:type" content="website">
-<meta property="og:title" content="澈溪">
-<meta property="og:url" content="http://example.com/index.html">
+  <meta name="description" content="1 . 基本介绍 1.队列介绍   1 . 队列是一个有序列表，可以用数组或是链表实现。 2 . 遵循先入先出（First Input First Output）的原则，也就是先存入队列的数据要先取出，后存入的要后取出。   2.数组模拟队列思路   1 . 前面说到队列是个有序列表，若使用数组的结构来储存队列的数据，肯定需要定义最大容量，也就是maxSize！ 2 . 因为队列的输入输出肯定要从">
+<meta property="og:type" content="article">
+<meta property="og:title" content="基础队列_数组队列-java">
+<meta property="og:url" content="http://example.com/2021/11/12/%E5%9F%BA%E7%A1%80%E9%98%9F%E5%88%97-%E6%95%B0%E7%BB%84%E9%98%9F%E5%88%97-java/index.html">
 <meta property="og:site_name" content="澈溪">
-<meta property="og:description" content="越努力，越幸运！">
+<meta property="og:description" content="1 . 基本介绍 1.队列介绍   1 . 队列是一个有序列表，可以用数组或是链表实现。 2 . 遵循先入先出（First Input First Output）的原则，也就是先存入队列的数据要先取出，后存入的要后取出。   2.数组模拟队列思路   1 . 前面说到队列是个有序列表，若使用数组的结构来储存队列的数据，肯定需要定义最大容量，也就是maxSize！ 2 . 因为队列的输入输出肯定要从">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/2021/11/12/%E5%9F%BA%E7%A1%80%E9%98%9F%E5%88%97-%E6%95%B0%E7%BB%84%E9%98%9F%E5%88%97-java/jichuduilie-shuzuduilie-java.jpg">
+<meta property="article:published_time" content="2021-11-12T08:32:02.000Z">
+<meta property="article:modified_time" content="2021-11-12T09:25:29.702Z">
 <meta property="article:author" content="chexi">
+<meta property="article:tag" content="算法与数据结构">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2021/11/12/%E5%9F%BA%E7%A1%80%E9%98%9F%E5%88%97-%E6%95%B0%E7%BB%84%E9%98%9F%E5%88%97-java/jichuduilie-shuzuduilie-java.jpg">
 
-<link rel="canonical" href="http://example.com/">
+<link rel="canonical" href="http://example.com/2021/11/12/%E5%9F%BA%E7%A1%80%E9%98%9F%E5%88%97-%E6%95%B0%E7%BB%84%E9%98%9F%E5%88%97-java/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome : true,
-    isPost : false,
+    isHome : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>澈溪</title>
+  <title>基础队列_数组队列-java | 澈溪</title>
   
 
 
@@ -209,9 +214,10 @@
         <div class="content-wrap">
           
 
-          <div class="content index posts-expand">
+          <div class="content post posts-expand">
             
-      
+
+    
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
@@ -227,10 +233,9 @@
       <meta itemprop="name" content="澈溪">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/11/12/%E5%9F%BA%E7%A1%80%E9%98%9F%E5%88%97-%E6%95%B0%E7%BB%84%E9%98%9F%E5%88%97-java/" class="post-title-link" itemprop="url">基础队列_数组队列-java</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          基础队列_数组队列-java
+        </h1>
 
         <div class="post-meta">
 		
@@ -244,7 +249,14 @@
               <time title="创建时间：2021-11-12 16:32:02 / 修改时间：17:25:29" itemprop="dateCreated datePublished" datetime="2021-11-12T16:32:02+08:00">2021-11-12</time>
             </span>
 
-          <br>
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye 浏览次"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span><br>
             <span class="post-meta-item" title="本文字数">
               <span class="post-meta-item-icon">
                 <i class="far fa-file-word"></i>
@@ -269,7 +281,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h3 id="1-基本介绍"><a href="#1-基本介绍" class="headerlink" title="1 . 基本介绍"></a>1 . 基本介绍</h3><ol>
+        <h3 id="1-基本介绍"><a href="#1-基本介绍" class="headerlink" title="1 . 基本介绍"></a>1 . 基本介绍</h3><ol>
 <li>1.队列介绍</li>
 </ol>
 <blockquote>
@@ -298,231 +310,120 @@
 <p>每日一句:  <em>If you don’t try to do something beyond your ability, you will never grow</em></p>
 <p><em>文章支持: <a target="_blank" rel="noopener" href="http://www.atguigu.com/">尚硅谷</a> <a target="_blank" rel="noopener" href="http://www.atguigu.com/">http://www.atguigu.com/</a></em></p>
 
-      
     </div>
 
     
     
     
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
+        <div class="reward-container">
+  <div>原创技术分享，您的支持将鼓励我继续创作</div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
       
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/11/10/%E7%A8%80%E7%96%8F%E6%95%B0%E7%BB%84%E4%B8%8E%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84-java/">
+      <div style="display: inline-block;">
+        <img src="/images/wechatpay.png" alt="chexi 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="/images/alipay.png" alt="chexi 支付宝">
+        <p>支付宝</p>
+      </div>
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="chexi">
-      <meta itemprop="description" content="越努力，越幸运！">
-    </span>
+  </div>
+</div>
 
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="澈溪">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/11/10/%E7%A8%80%E7%96%8F%E6%95%B0%E7%BB%84%E4%B8%8E%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84-java/" class="post-title-link" itemprop="url">稀疏数组与二维数组-java</a>
-        </h2>
+        
 
-        <div class="post-meta">
-		
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>chexi
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://example.com/2021/11/12/%E5%9F%BA%E7%A1%80%E9%98%9F%E5%88%97-%E6%95%B0%E7%BB%84%E9%98%9F%E5%88%97-java/" title="基础队列_数组队列-java">http://example.com/2021/11/12/基础队列-数组队列-java/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
 
-              <time title="创建时间：2021-11-10 16:54:17" itemprop="dateCreated datePublished" datetime="2021-11-10T16:54:17+08:00">2021-11-10</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-11-12 17:25:43" itemprop="dateModified" datetime="2021-11-12T17:25:43+08:00">2021-11-12</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E5%88%9D%E7%BA%A7-java/" itemprop="url" rel="index"><span itemprop="name">算法与数据结构-初级-java</span></a>
-                </span>
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/images/wechat_channel.jpg">
+            <span class="icon">
+              <i class="fab fa-weixin"></i>
             </span>
 
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>4.5k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>4 分钟</span>
-            </span>
-
+            <span class="label">WeChat</span>
+          </a>
         </div>
-      </header>
 
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="1-基本介绍"><a href="#1-基本介绍" class="headerlink" title="1 . 基本介绍"></a>1 . 基本介绍</h3><img src="/2021/11/10/%E7%A8%80%E7%96%8F%E6%95%B0%E7%BB%84%E4%B8%8E%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84-java/image-20211111091223408.png" class title="图例"> 
-
-<blockquote>
-<p><em>当一个数组中大部分元素为0，或者为同一个值得数组时，可以使用稀疏数组来保存该数组。</em></p>
-</blockquote>
-<ol>
-<li>1 . 处理方法</li>
-</ol>
-<blockquote>
-<p>1 . 记录数组中<strong>一共有几行几列，有多少个不同的</strong>值</p>
-<p>2 . 把具有不同值得元素得行列及值记录在一个小规模得数组中从而<strong>缩小程序</strong>得规模</p>
-</blockquote>
-<ol>
-<li>2 . 应用实例</li>
-</ol>
-<blockquote>
-<p>1 . 使用稀疏数组来保存类似于棋盘，地图等二维数组数据等等</p>
-<p>2 . 把二维数组转换稀疏数组存盘，并且可以读取恢复原来得二维数组</p>
-</blockquote>
-<ol>
-<li>3 . 代码实现</li>
-</ol>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.chexi.dsa.sparsearray;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.*;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * &lt;p&gt;</span></span><br><span class="line"><span class="comment"> * 完成稀疏数组读写转换</span></span><br><span class="line"><span class="comment"> * &lt;/p&gt;</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> chexi</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@since</span> 2021/11/3</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SparseArrayIO</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//建立一个二维数组 长度11*11</span></span><br><span class="line">        <span class="keyword">int</span>[][] chessArray = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">11</span>][<span class="number">11</span>];</span><br><span class="line">        <span class="comment">//初始化二维数组</span></span><br><span class="line">        chessArray[<span class="number">2</span>][<span class="number">3</span>] = <span class="number">1</span>;</span><br><span class="line">        chessArray[<span class="number">3</span>][<span class="number">2</span>] = <span class="number">2</span>;</span><br><span class="line">        chessArray[<span class="number">3</span>][<span class="number">4</span>] = <span class="number">1</span>;</span><br><span class="line">        chessArray[<span class="number">4</span>][<span class="number">3</span>] = <span class="number">2</span>;</span><br><span class="line">        <span class="comment">//遍历二维数组 看是否正常</span></span><br><span class="line">        System.out.println(<span class="string">&quot;二维数组：~~~~~~~~~~~~~~~~~~~~&quot;</span>);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span>[] ints : chessArray) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> anInt : ints) &#123;</span><br><span class="line">                System.out.printf(<span class="string">&quot;%d\t&quot;</span>, anInt);</span><br><span class="line">            &#125;</span><br><span class="line">            System.out.println();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//拿到二维数组的有效数字个数 以便于创建稀疏数组</span></span><br><span class="line">        <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; chessArray.length; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; chessArray.length; j++) &#123;</span><br><span class="line">                <span class="keyword">if</span> (chessArray[i][j] &gt; <span class="number">0</span>) &#123;</span><br><span class="line">                    sum++;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//创建稀疏数组 初始化稀疏数组</span></span><br><span class="line">        <span class="keyword">int</span>[][] sparseArray = <span class="keyword">new</span> <span class="keyword">int</span>[sum + <span class="number">1</span>][<span class="number">3</span>];</span><br><span class="line">        sparseArray[<span class="number">0</span>][<span class="number">0</span>] = chessArray.length;</span><br><span class="line">        sparseArray[<span class="number">0</span>][<span class="number">1</span>] = chessArray.length;</span><br><span class="line">        sparseArray[<span class="number">0</span>][<span class="number">2</span>] = sum;</span><br><span class="line">        <span class="comment">//再次遍历二维数组对有效数字进行稀疏数组赋值</span></span><br><span class="line">        <span class="comment">//定义 计算有效数组及时个数 便于定位稀疏数组行数下标</span></span><br><span class="line">        <span class="keyword">int</span> index = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; chessArray.length; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; chessArray.length; j++) &#123;</span><br><span class="line">                <span class="keyword">if</span> (chessArray[i][j] &gt; <span class="number">0</span>) &#123;</span><br><span class="line">                    index++;</span><br><span class="line">                    sparseArray[index][<span class="number">0</span>] = i;</span><br><span class="line">                    sparseArray[index][<span class="number">1</span>] = j;</span><br><span class="line">                    sparseArray[index][<span class="number">2</span>] = chessArray[i][j];</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//遍历稀疏数组看是否转换成功</span></span><br><span class="line">        System.out.println(<span class="string">&quot;稀疏数组：~~~~~~~~~~~~~~~~~~~~&quot;</span>);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span>[] ints : sparseArray) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> anInt : ints) &#123;</span><br><span class="line">                System.out.printf(<span class="string">&quot;%d\t&quot;</span>, anInt);</span><br><span class="line">            &#125;</span><br><span class="line">            System.out.println();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//转换成功对稀疏数组进行写入保存</span></span><br><span class="line">        write(sparseArray);</span><br><span class="line">        <span class="comment">//读取存放稀疏数组文件</span></span><br><span class="line">        <span class="keyword">int</span>[][] read = read(<span class="string">&quot;E:&quot;</span> + File.separator + <span class="string">&quot;leetcode&quot;</span> + File.separator + <span class="string">&quot;IOFile&quot;</span> + File.separator + <span class="string">&quot;chexi.txt&quot;</span>);</span><br><span class="line">        <span class="comment">//将读取到的稀疏数组转为二维数组 拿到稀疏数组的组头二维数组结构</span></span><br><span class="line">        <span class="keyword">int</span>[][] tdArray = <span class="keyword">new</span> <span class="keyword">int</span>[read[<span class="number">0</span>][<span class="number">0</span>]][read[<span class="number">0</span>][<span class="number">1</span>]];</span><br><span class="line">        <span class="comment">//遍历创建空二维数组 看是否正常</span></span><br><span class="line">        System.out.println(<span class="string">&quot;空二维数组：~~~~~~~~~~~~~~~~~~~~&quot;</span>);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span>[] ints : tdArray) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> anInt : ints) &#123;</span><br><span class="line">                System.out.printf(<span class="string">&quot;%d\t&quot;</span>, anInt);</span><br><span class="line">            &#125;</span><br><span class="line">            System.out.println();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//遍历稀疏数组对二维数组进行赋值</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; read.length; i++) &#123;</span><br><span class="line">            tdArray[read[i][<span class="number">0</span>]][read[i][<span class="number">1</span>]] = read[i][<span class="number">2</span>];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//再次遍历赋值后二维数组 看是否正常</span></span><br><span class="line">        System.out.println(<span class="string">&quot;赋值后二维数组：~~~~~~~~~~~~~~~~~~~~&quot;</span>);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span>[] ints : tdArray) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> anInt : ints) &#123;</span><br><span class="line">                System.out.printf(<span class="string">&quot;%d\t&quot;</span>, anInt);</span><br><span class="line">            &#125;</span><br><span class="line">            System.out.println();</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(<span class="string">&quot;大功告成！&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 写入稀疏数组</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> sparseArray</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">write</span><span class="params">(<span class="keyword">int</span>[][] sparseArray)</span> </span>&#123;</span><br><span class="line">        File file = <span class="keyword">new</span> File(<span class="string">&quot;E:&quot;</span> + File.separator + <span class="string">&quot;leetcode&quot;</span> + File.separator + <span class="string">&quot;IOFile&quot;</span> + File.separator + <span class="string">&quot;chexi.txt&quot;</span>);</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="keyword">if</span> (!file.exists()) &#123;</span><br><span class="line">                file.createNewFile();</span><br><span class="line">            &#125;</span><br><span class="line">            OutputStream outputStream = <span class="keyword">new</span> FileOutputStream(file);</span><br><span class="line">            <span class="comment">//遍历稀疏数组 拿到值存放到字符串中</span></span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; sparseArray.length; i++) &#123;</span><br><span class="line">                String context = sparseArray[i][<span class="number">0</span>] + <span class="string">&quot; &quot;</span> + sparseArray[i][<span class="number">1</span>] + <span class="string">&quot; &quot;</span> + sparseArray[i][<span class="number">2</span>] + <span class="string">&quot;,\r\n&quot;</span>;</span><br><span class="line">                <span class="comment">//换行写入文件中</span></span><br><span class="line">                outputStream.write(context.getBytes());</span><br><span class="line">            &#125;</span><br><span class="line">            outputStream.close();</span><br><span class="line">            System.out.println(<span class="string">&quot;写入成功&quot;</span>);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 读取稀疏数组 转换为二维数组</span></span><br><span class="line"><span class="comment">     * File.separator 其实 File.separator 的作用相当于 &#x27; \  &#x27; 在 windows 中 文件文件分隔符 用 &#x27; \ &#x27; 或者 &#x27; / &#x27; 都可以</span></span><br><span class="line"><span class="comment">     * &lt;p&gt;</span></span><br><span class="line"><span class="comment">     * 所以用 File.separator 保证了在任何系统下不会出错。</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> filePath</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span>[][] read(String filePath) &#123;</span><br><span class="line">        File file = <span class="keyword">new</span> File(filePath);</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            InputStream inputStream = <span class="keyword">new</span> FileInputStream(file);</span><br><span class="line">            <span class="keyword">byte</span>[] bytes = <span class="keyword">new</span> <span class="keyword">byte</span>[<span class="number">1024</span>];</span><br><span class="line">            <span class="keyword">int</span> len = <span class="number">0</span>;</span><br><span class="line">            String str = <span class="keyword">new</span> String();</span><br><span class="line">            <span class="keyword">while</span> ((len = inputStream.read(bytes)) != -<span class="number">1</span>) &#123;</span><br><span class="line">                <span class="comment">//解析数组去除换行符</span></span><br><span class="line">                str = <span class="keyword">new</span> String(bytes, <span class="number">0</span>, len).replaceAll(<span class="string">&quot;\\r|\\n&quot;</span>, <span class="string">&quot;&quot;</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">//解析数组到稀疏数组</span></span><br><span class="line">            String[] split = str.split(<span class="string">&quot;,&quot;</span>);</span><br><span class="line">            <span class="keyword">int</span>[][] tdArray = <span class="keyword">new</span> <span class="keyword">int</span>[split.length][<span class="number">3</span>];</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; split.length; i++) &#123;</span><br><span class="line">                String[] s1 = split[i].split(<span class="string">&quot; &quot;</span>);</span><br><span class="line">                tdArray[i][<span class="number">0</span>] = Integer.valueOf(s1[<span class="number">0</span>]);</span><br><span class="line">                tdArray[i][<span class="number">1</span>] = Integer.valueOf(s1[<span class="number">1</span>]);</span><br><span class="line">                tdArray[i][<span class="number">2</span>] = Integer.valueOf(s1[<span class="number">2</span>]);</span><br><span class="line">            &#125;</span><br><span class="line">            System.out.println(<span class="string">&quot;读取成功:&quot;</span>);</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; tdArray.length; i++) &#123;</span><br><span class="line">                System.out.printf(<span class="string">&quot;%d\t%d\t%d\t\n&quot;</span>, tdArray[i][<span class="number">0</span>], tdArray[i][<span class="number">1</span>], tdArray[i][<span class="number">2</span>]);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span> tdArray;</span><br><span class="line">        &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>总结：任何复杂程序只要经过研究处理，都会简单，实用化！</p>
-<p>每日一句： <em>Children without umbrellas should run hard!</em></p>
-<p><em>文章支持: <a target="_blank" rel="noopener" href="http://www.atguigu.com/">尚硅谷</a> <a target="_blank" rel="noopener" href="http://www.atguigu.com/">http://www.atguigu.com/</a></em></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/11/10/AnotherDay/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="chexi">
-      <meta itemprop="description" content="越努力，越幸运！">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="澈溪">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/11/10/AnotherDay/" class="post-title-link" itemprop="url">anotherDay</a>
-        </h2>
-
-        <div class="post-meta">
-		
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-11-10 15:08:58" itemprop="dateCreated datePublished" datetime="2021-11-10T15:08:58+08:00">2021-11-10</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-11-11 10:55:21" itemprop="dateModified" datetime="2021-11-11T10:55:21+08:00">2021-11-11</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/anotherDay/" itemprop="url" rel="index"><span itemprop="name">anotherDay</span></a>
-                </span>
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
             </span>
 
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>111</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
+            <span class="label">RSS</span>
+          </a>
         </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="A-When-you-open-your-eyes-be-glad-for-the-day"><a href="#A-When-you-open-your-eyes-be-glad-for-the-day" class="headerlink" title="A . When you open your eyes be glad for the day !"></a>A . When you open your eyes be glad for the day !</h1><h1 id="B-Make-sure-you-have-ample-time-to-prepare-for-the-new-day-ahead！"><a href="#B-Make-sure-you-have-ample-time-to-prepare-for-the-new-day-ahead！" class="headerlink" title="B . Make sure you have ample time to prepare for the new day ahead！"></a>B . Make sure you have ample time to prepare for the new day ahead！</h1><h1 id="C-Do-you-get-me"><a href="#C-Do-you-get-me" class="headerlink" title="C . Do you get me !"></a>C . Do you get me !</h1><p>​                                                     <em>澈溪，因你而生</em></p>
-
-      
     </div>
+  </div>
 
+
+      
+        <div>
+          <div>
     
+        <div style="text-align:center;color: #ccc;font-size:24px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
     
-    
+</div>
+        </div>
+      
+
       <footer class="post-footer">
-        <div class="post-eof"></div>
+          <div class="post-tags">
+              <a href="/tags/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag"># 算法与数据结构</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/11/10/%E7%A8%80%E7%96%8F%E6%95%B0%E7%BB%84%E4%B8%8E%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84-java/" rel="prev" title="稀疏数组与二维数组-java">
+      <i class="fa fa-chevron-left"></i> 稀疏数组与二维数组-java
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
       </footer>
+    
   </article>
   
   
-  
-
-
   
 
 
 
           </div>
           
+    
+  <div class="comments">
+    <div id="lv-container" data-id="city" data-uid="MTAyMC81NDY3MS8zMTE0Mg=="></div>
+  </div>
+  
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -569,6 +470,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%BB%8D"><span class="nav-number">1.</span> <span class="nav-text">1 . 基本介绍</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -748,6 +650,21 @@
 
   
 
+<script>
+NexT.utils.loadComments(document.querySelector('#lv-container'), () => {
+  window.livereOptions = {
+    refer: location.pathname.replace(CONFIG.root, '').replace('index.html', '')
+  };
+  (function(d, s) {
+    var j, e = d.getElementsByTagName(s)[0];
+    if (typeof LivereTower === 'function') { return; }
+    j = d.createElement(s);
+    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+    j.async = true;
+    e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+});
+</script>
 
 </body>
 </html>
