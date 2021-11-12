@@ -9,8 +9,34 @@
     <atom:link href="http://example.com/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>越努力，越幸运！</description>
-    <pubDate>Fri, 12 Nov 2021 07:59:42 GMT</pubDate>
+    <pubDate>Thu, 11 Nov 2021 05:32:57 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>article_name</title>
+      <link>http://example.com/2021/11/11/article-name/</link>
+      <guid>http://example.com/2021/11/11/article-name/</guid>
+      <pubDate>Thu, 11 Nov 2021 03:34:14 GMT</pubDate>
+      
+        
+        
+      <description>&lt;img src=&quot;/2021/11/11/article-name/image-20211111091223408.png&quot; class title=&quot;图例&quot;&gt;
+
+</description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<img src="/2021/11/11/article-name/image-20211111091223408.png" class title="图例">]]></content:encoded>
+      
+      
+      
+      <category domain="http://example.com/tags/%E6%B5%8B%E8%AF%95%E5%9B%BE%E7%89%87/">测试图片</category>
+      
+      
+      <comments>http://example.com/2021/11/11/article-name/#disqus_thread</comments>
+      
+    </item>
     
     <item>
       <title>稀疏数组与二维数组-java</title>
