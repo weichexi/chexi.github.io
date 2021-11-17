@@ -241,7 +241,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2021-11-17 14:30:04 / 修改时间：16:49:49" itemprop="dateCreated datePublished" datetime="2021-11-17T14:30:04+08:00">2021-11-17</time>
+              <time title="创建时间：2021-11-17 14:30:04 / 修改时间：16:56:53" itemprop="dateCreated datePublished" datetime="2021-11-17T14:30:04+08:00">2021-11-17</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -308,8 +308,10 @@
 <li><p>2 . 使用建议</p>
 <p>1 . 不论是单个参数，还是多个参数，一律都建议使用注解@Param(“”)</p>
 <p>2 . 能用 #{} 的地方就用 #{}，不用或少用 ${}</p>
-<p>3 . 表名作参数时，必须用 。如：select∗from。如：select∗from{tableName}</p>
-<p>4 . order by 时，必须用 。如：select∗fromtuserorderby。如：select∗fromtuserorderby{columnName}</p>
+<p>3 . 表名作参数时，必须用 ${}。</p>
+<p>如：select ∗ from ${tableName}</p>
+<p>4 . ORDERBY 时，必须用 ${} 。</p>
+<p>如：select ∗ from tuser orderby ${columnName}</p>
 <p>5 . 使用 时，要注意何时加或不加单引号，即时，要注意何时加或不加单引号，即{} 和 ‘${}’</p>
 </li>
 </ol>
