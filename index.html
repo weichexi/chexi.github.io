@@ -215,6 +215,133 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/11/17/mybatis%E4%B8%AD-%E5%92%8C-mybatis-java/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="chexi">
+      <meta itemprop="description" content="越努力，越幸运！">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="澈溪">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/11/17/mybatis%E4%B8%AD-%E5%92%8C-mybatis-java/" class="post-title-link" itemprop="url">mybatis中#{}和${}-mybatis-java</a>
+        </h2>
+
+        <div class="post-meta">
+		
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-11-17 14:30:04 / 修改时间：16:41:11" itemprop="dateCreated datePublished" datetime="2021-11-17T14:30:04+08:00">2021-11-17</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/mybatis/" itemprop="url" rel="index"><span itemprop="name">mybatis</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.4k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><em>最近写东西经常和mybatis-xml文件打交道，有时一些非常细小繁琐的字段选择查询经常会用到${}还有常用的#{}这两种传参方式，刚好趁热打铁总结一下</em></p>
+<h3 id="1-基本介绍"><a href="#1-基本介绍" class="headerlink" title="1 . 基本介绍"></a>1 . 基本介绍</h3><blockquote>
+<p>简单介绍一下：Mybatis 的Mapper.xml语句中parameterType向SQL语句传参有两种方式：#{}和${}，#{}可以说是占位符而${}可以说是拼接符。</p>
+<p>我们经常使用的是#{},一般解说是因为这种方式可以防止SQL注入，简单的说#{}这种方式SQL语句是经过预编译的，它是把#{}中间的参数转义成字符串。</p>
+</blockquote>
+<p><em>来看看官方的介绍使用说明</em></p>
+<img src="/2021/11/17/mybatis%E4%B8%AD-%E5%92%8C-mybatis-java/image-20211117145936575.png" class title="image-20211117145936575">
+
+<p>从中得到几个重点</p>
+<blockquote>
+<ol>
+<li><p>1 . 区别</p>
+<p>1 . #{} 为参数占位符 ?，即sql 预编译</p>
+<p>　 ${} 为字符串替换，即 sql 拼接</p>
+<p>2 . #{}：动态解析 -&gt; 预编译 -&gt; 执行</p>
+<p>　 ${}：动态解析 -&gt; 编译 -&gt; 执行</p>
+<p>3 . #{} 的变量替换是在DBMS 中</p>
+<p>　 ${} 的变量替换是在 DBMS 外</p>
+<p>4 . 变量替换后，#{} 对应的变量<strong>自动加上</strong>单引号 ‘ ‘</p>
+<p>　 变量替换后，${} 对应的变量<strong>不会加上</strong>单引号 ‘ ‘</p>
+<p>5 . #{} 能防止sql 注入</p>
+<p>　 ${} 不能防止sql 注入</p>
+</li>
+</ol>
+</blockquote>
+<blockquote>
+<ol>
+<li><p>2 . 使用建议</p>
+<p>1 . 不论是单个参数，还是多个参数，一律都建议使用注解@Param(“”)</p>
+<p>2 . 能用 #{} 的地方就用 #{}，不用或少用 ${}</p>
+<p>3 . 表名作参数时，必须用 。如：select∗from。如：select∗from{tableName}</p>
+<p>4 . order by 时，必须用 。如：select∗fromtuserorderby。如：select∗fromtuserorderby{columnName}</p>
+<p>5 . 使用 时，要注意何时加或不加单引号，即时，要注意何时加或不加单引号，即{} 和 ‘${}’</p>
+</li>
+</ol>
+</blockquote>
+<ol>
+<li><p>3 . 代码实例</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">#Mybatis在对#&#123;&#125;进行预处理时，会把#&#123;&#125;处理成占位符，实际执行的时候才会把参数替换进去，相当于jdbc的PreparedStatement。</span><br><span class="line">&lt;select id=&quot;select&quot; parameterType=&quot;java.lang.String&quot; resultType=&quot;baseMap&quot;&gt;</span><br><span class="line">    select * from user where name=#&#123;name&#125;</span><br><span class="line">&lt;/select&gt;</span><br><span class="line">#运行对应</span><br><span class="line">select * from user where name=? ?即参数name的值</span><br><span class="line"></span><br><span class="line">#使用$&#123;&#125;拼接占位符</span><br><span class="line">&lt;select id=&quot;select&quot; parameterType=&quot;java.lang.String&quot; resultType=&quot;baseMap&quot;&gt;</span><br><span class="line">    select * from user where name=$&#123;name&#125;</span><br><span class="line">&lt;/select&gt;</span><br><span class="line">#运行对应</span><br><span class="line">select * from user where name=name</span><br><span class="line">#$&#123;&#125; 则只是简单的字符串替换，在动态解析阶段，该 sql 语句会直接将变量值替换进去，这样就有可能会发生sql注入的风险。</span><br></pre></td></tr></table></figure>
+
+<p>总结：#{}占位符而和${}拼接符各有所用，各有优劣，只要用到合适的地方。</p>
+<p>每日一句： <em>听过很多道理，却依然过不好这一生</em></p>
+<p>文章支持:   <em>所有热衷于Mybatis的博主</em></p>
+</li>
+</ol>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://example.com/2021/11/12/%E5%9F%BA%E7%A1%80%E9%98%9F%E5%88%97-%E6%95%B0%E7%BB%84%E7%8E%AF%E5%BD%A2%E9%98%9F%E5%88%97-java/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -705,20 +832,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">4</span>
+          <span class="site-state-item-count">5</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -778,12 +905,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">13k</span>
+    <span title="站点总字数">14k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">12 分钟</span>
+    <span title="站点阅读时长">13 分钟</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>
