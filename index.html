@@ -215,6 +215,129 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/11/18/%E5%8C%BF%E5%90%8D%E5%86%85%E9%83%A8%E7%B1%BB-java/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="chexi">
+      <meta itemprop="description" content="越努力，越幸运！">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="澈溪">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/11/18/%E5%8C%BF%E5%90%8D%E5%86%85%E9%83%A8%E7%B1%BB-java/" class="post-title-link" itemprop="url">匿名内部类-java</a>
+        </h2>
+
+        <div class="post-meta">
+		
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-11-18 09:37:40 / 修改时间：10:32:29" itemprop="dateCreated datePublished" datetime="2021-11-18T09:37:40+08:00">2021-11-18</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/java/" itemprop="url" rel="index"><span itemprop="name">java</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.6k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="1-匿名内部类"><a href="#1-匿名内部类" class="headerlink" title="1.匿名内部类"></a>1.匿名内部类</h3><ol>
+<li><p>介绍</p>
+<blockquote>
+<p>1 . 是内部类的简化写法。它的本质是一个带具体实现的父类或者父接口的匿名的子类对象。</p>
+<p>2 . 匿名内部类会隐式的继承一个类或者实现一个接口，或者说，匿名内部类是一个继承了该类或者实现了该接口的子类匿名对象。</p>
+</blockquote>
+</li>
+<li><p>作用</p>
+<blockquote>
+<p>1 . 匿名内部类可以使你的代码更加简洁，你可以在定义一个类的同时对其进行实例化。<br>2 . 它与局部类很相似，不同的是它没有类名，如果某个局部类你只需要用一次，那么你就可以使用匿名内部类。</p>
+</blockquote>
+</li>
+<li><p>对比</p>
+<blockquote>
+<p>普通类要实现一个接口方法需要</p>
+<p>1.接口</p>
+<p>2.实现类</p>
+<p>3.main</p>
+<p>匿名类则可以省略实现类</p>
+</blockquote>
+</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//接口</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">myInterFace</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">method</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//实现类</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">myInterFaceImp</span> <span class="keyword">implements</span> <span class="title">myInterFace</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">method</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;实现类实现重写了方法&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//main</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//1</span></span><br><span class="line">        myInterFaceImp myInterFaceImp=<span class="keyword">new</span> myInterFaceImp();</span><br><span class="line">        myInterFaceImp.method();</span><br><span class="line">        <span class="comment">//2</span></span><br><span class="line">        myInterFace myInterFace=<span class="keyword">new</span> myInterFaceImp();</span><br><span class="line">        myInterFace.method();</span><br><span class="line">    &#125;</span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//接口</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">myInterFace</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">method</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//匿名内部类实现</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        myInterFace myInterFace=<span class="keyword">new</span> myInterFace() &#123;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">method</span><span class="params">()</span> </span>&#123;</span><br><span class="line">                System.out.println(<span class="string">&quot;我叫匿名内部类A！&quot;</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;;</span><br><span class="line">        myInterFace.method();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//匿名对象实现</span></span><br><span class="line">  <span class="keyword">new</span> myInterFace()&#123;</span><br><span class="line">           <span class="meta">@Override</span></span><br><span class="line">           <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">method</span><span class="params">()</span> </span>&#123;</span><br><span class="line">               System.out.println(<span class="string">&quot;我叫匿名内部类B！&quot;</span>);</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;.method();</span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li><p>说明</p>
+<blockquote>
+<p>解析内部类new 接口名称(){……}<br>1.new 代表创建接口的动作。<br>2.接口名称就是匿名内部类需要实现那个接口。<br>3.{……}实现匿名内部类的内容。</p>
+</blockquote>
+</li>
+<li><p>注意问题</p>
+<blockquote>
+<p>1.匿名内部类在【创建对象】的时候只能使用一次，<br>如果需求不一样，需要多次创建对象调用，而且内容一样的话，就需要单独定于实现类。<br>2.匿名对象在【调用方法】的时候，只能调用唯一一次，<br>如果希望一个对象，多次调用方法，必须给对象起个名字。<br>3.匿名内部类是省略了【实现类/子类名称】，但是匿名对象是省略了对象名称，<br>强调：匿名对象和对象不是一回事！！！</p>
+</blockquote>
+</li>
+</ol>
+<p>总结：通过代码看出，实际上我们的myInterFace是一个接口，本身接口是不能直接new的，但是呢却又发现我们在new的时候，myInterFace这个接口后面带了一对花括号，那么这个就表示实际上我现在new的是这个接口的实现类。但是发现，这个实现类是没有名字的。</p>
+<p>每日一句： <em>Life is not Lin Daiyu, not because of sadness</em></p>
+<p><em>文章支持:  Every One</em></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://example.com/2021/11/17/mybatis%E4%B8%AD-%E5%92%8C-mybatis-java/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -834,20 +957,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">5</span>
+          <span class="site-state-item-count">6</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -907,12 +1030,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">14k</span>
+    <span title="站点总字数">16k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">13 分钟</span>
+    <span title="站点阅读时长">14 分钟</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>
