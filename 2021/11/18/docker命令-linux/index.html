@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://weichexi.cn/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://weichexi.cn/images/big/VIP.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://weichexi.cn/images/small/VIP.png">
+  <link rel="mask-icon" href="https://weichexi.cn/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"manual","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="1 . 基本介绍 简要&amp;概念  Docker 是一个开源的应用容器引擎，基于 Go 语言 并遵从 Apache2.0 协议开源。 Docker 可以让开发者打包他们的应用以及依赖包到一个轻量级、可移植的容器中，然后发布到任何流行的 Linux 机器上，也可以实现虚拟化。 容器是完全使用沙箱机制，相互之间不会有任何接口（类似 iPhone 的 app）,更重要的是容器性能开销极低。   准备">
+<meta property="og:type" content="article">
+<meta property="og:title" content="docker命令-linux">
+<meta property="og:url" content="http://example.com/2021/11/18/docker%E5%91%BD%E4%BB%A4-linux/index.html">
+<meta property="og:site_name" content="澈溪">
+<meta property="og:description" content="1 . 基本介绍 简要&amp;概念  Docker 是一个开源的应用容器引擎，基于 Go 语言 并遵从 Apache2.0 协议开源。 Docker 可以让开发者打包他们的应用以及依赖包到一个轻量级、可移植的容器中，然后发布到任何流行的 Linux 机器上，也可以实现虚拟化。 容器是完全使用沙箱机制，相互之间不会有任何接口（类似 iPhone 的 app）,更重要的是容器性能开销极低。   准备">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/2021/11/18/docker%E5%91%BD%E4%BB%A4-linux/image-20211118163901233.png">
+<meta property="og:image" content="http://example.com/2021/11/18/docker%E5%91%BD%E4%BB%A4-linux/image-20211118164045876.png">
+<meta property="article:published_time" content="2021-11-18T05:18:24.000Z">
+<meta property="article:modified_time" content="2021-11-18T08:55:36.977Z">
+<meta property="article:author" content="chexi">
+<meta property="article:tag" content="docker">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2021/11/18/docker%E5%91%BD%E4%BB%A4-linux/image-20211118163901233.png">
+
+<link rel="canonical" href="http://example.com/2021/11/18/docker%E5%91%BD%E4%BB%A4-linux/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>docker命令-linux | 澈溪</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/rss2.xml" title="澈溪" type="application/rss+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+	<a target="_blank" rel="noopener" href="https://weichexi.cn/" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; left: 0; transform: scale(-1, 1);" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style></a>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">澈溪</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-resources">
+
+    <a href="/resources/" rel="section"><i class="fa fa-download fa-fw"></i>资源</a>
+
+  </li>
+        <li class="menu-item menu-item-schedule">
+
+    <a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>日程表</a>
+
+  </li>
+        <li class="menu-item menu-item-sitemap">
+
+    <a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>站点地图</a>
+
+  </li>
+        <li class="menu-item menu-item-commonweal">
+
+    <a href="/404/" rel="section"><i class="fa fa-heartbeat fa-fw"></i>公益 404</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/11/18/docker%E5%91%BD%E4%BB%A4-linux/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="chexi">
+      <meta itemprop="description" content="越努力，越幸运！">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="澈溪">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          docker命令-linux
+        </h1>
+
+        <div class="post-meta">
+		
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-11-18 13:18:24 / 修改时间：16:55:36" itemprop="dateCreated datePublished" datetime="2021-11-18T13:18:24+08:00">2021-11-18</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/linux/" itemprop="url" rel="index"><span itemprop="name">linux</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye 浏览次"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span><br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>8.6k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>8 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h3 id="1-基本介绍"><a href="#1-基本介绍" class="headerlink" title="1 . 基本介绍"></a>1 . 基本介绍</h3><ol>
+<li><p>简要&amp;概念</p>
+<blockquote>
+<p>Docker 是一个开源的应用容器引擎，基于 <a target="_blank" rel="noopener" href="https://www.runoob.com/go/go-tutorial.html">Go 语言</a> 并遵从 Apache2.0 协议开源。</p>
+<p>Docker 可以让开发者打包他们的应用以及依赖包到一个轻量级、可移植的容器中，然后发布到任何流行的 Linux 机器上，也可以实现虚拟化。</p>
+<p>容器是完全使用沙箱机制，相互之间不会有任何接口（类似 iPhone 的 app）,更重要的是容器性能开销极低。</p>
+</blockquote>
+</li>
+<li><p>准备&amp;应用</p>
+<blockquote>
+<p>准备：需要学习简单的Linux常用命令</p>
+<p>应用：</p>
+<ul>
+<li>Web 应用的自动化打包和发布。</li>
+<li>自动化测试和持续集成、发布。</li>
+<li>在服务型环境中部署和调整数据库或其他的后台应用。</li>
+<li>从头编译或者扩展现有的 OpenShift 或 Cloud Foundry 平台来搭建自己的 PaaS 环境</li>
+</ul>
+</blockquote>
+</li>
+<li><p>命令介绍</p>
+<p>镜像</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">docker images -q <span class="comment">#查看所有镜像id</span></span><br><span class="line">docker images -a <span class="comment">#查看所有镜像信息</span></span><br><span class="line">docker pull mysql:5.7 <span class="comment">#拉取镜像指定版本</span></span><br><span class="line">docker pull mysql <span class="comment">#默认拉取镜像最新版本</span></span><br><span class="line">docker rmi -f <span class="comment">#镜像id 删除镜像</span></span><br><span class="line">docker rmi -f <span class="comment">#镜像id，容器id  删除镜像多个</span></span><br><span class="line">docker rmi -f $(docker images -aq) <span class="comment">#删除镜像全部</span></span><br></pre></td></tr></table></figure>
+
+<p>图例查看所有镜像信息</p>
+<img src="/2021/11/18/docker%E5%91%BD%E4%BB%A4-linux/image-20211118163901233.png" class title="image-20211118163901233">
+
+<p>容器</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">docker run -it centos /bin/bash <span class="comment">#（交互模式）运行并进入 exit退出(同时停止) ctrl+p+q不停止退出</span></span><br><span class="line">docker ps -a <span class="comment">#查看全部运行过的容器</span></span><br><span class="line">docker ps -n=? <span class="comment">#查看最近创建运行的容器</span></span><br><span class="line">docker ps -aq <span class="comment">#查看所有运行过的容器编号</span></span><br><span class="line">docker rm <span class="comment">#删除容器id 未运行</span></span><br><span class="line">docker rm -f <span class="comment">#删除容器id 运行中 单个</span></span><br><span class="line">docker rm -f $(docker ps -aq) <span class="comment">#删除全部</span></span><br><span class="line">docker ps -a -q|xargs docekr rm</span><br><span class="line"></span><br><span class="line">docker start 容器id <span class="comment">#启动</span></span><br><span class="line">docker restart 容器id <span class="comment">#重启</span></span><br><span class="line">docker stop 容器id <span class="comment">#停止</span></span><br><span class="line">docker <span class="built_in">kill</span> 容器id <span class="comment">#杀掉</span></span><br></pre></td></tr></table></figure>
+
+<p>图例查看所有运行过的容器信息</p>
+<img src="/2021/11/18/docker%E5%91%BD%E4%BB%A4-linux/image-20211118164045876.png" class title="image-20211118164045876">
+
+<p>其他常用命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br></pre></td><td class="code"><pre><span class="line">docker logs -f -t --tail 10 145a6ffb8ecd <span class="comment">#查看日志</span></span><br><span class="line">docker run -d centos <span class="comment">#后台启动如果没有服务会自动关闭</span></span><br><span class="line">docker run -d centos /bin/bash  -c <span class="string">&quot;while true;do echo chexi;sleep 1;done&quot;</span> <span class="comment">#脚本运行</span></span><br><span class="line"></span><br><span class="line">docker top <span class="comment">#容器id 容器进程信息</span></span><br><span class="line">docker inspect 容器id <span class="comment">#容器信息（元数据）</span></span><br><span class="line"></span><br><span class="line">docker <span class="built_in">exec</span> -it 93d760824cb7 /bin/bash <span class="comment">#进入容器（新的）</span></span><br><span class="line">docker attach 93d760824cb7 <span class="comment">#进入正在运行的容器</span></span><br><span class="line"></span><br><span class="line">docker cp 93d760824cb7:/home/test.java /home <span class="comment">#将容器内的文件拷到主机上</span></span><br><span class="line"></span><br><span class="line">docker run -d --name nginx03 -p 3344:80 nginx <span class="comment">#docker部署nginx运行 -d后台运行 -p暴露端口</span></span><br><span class="line"></span><br><span class="line">docker stats <span class="comment">#查看服务器cpu状态 -e参数 环境参数修改</span></span><br><span class="line"></span><br><span class="line">docker run -d --name elasticsearch01 -p 9200:9200 -p 9300:9300 -e <span class="string">&quot;discovery.type=single-node&quot;</span> -e ES_JAVA_OPTS=<span class="string">&quot;Xms64m -M=Xms512m&quot;</span>  elasticsearch:7.12.0 <span class="comment">#增加环境配置限制大小</span></span><br><span class="line"></span><br><span class="line">run -d -p 8088:9000 --restart=always -v /var/run/docker.sock:/var/run/docker.sock --privileged=<span class="literal">true</span> portainer/portainer <span class="comment">#可视化面板 http://服务器ip:8088/</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#联合文件系统</span></span><br><span class="line"></span><br><span class="line">docker commit -a=<span class="string">&quot;chexi&quot;</span> -m<span class="string">&quot;add webapps app&quot;</span> c2d6d2743fc3 tomcat01:1.0</span><br><span class="line"><span class="comment">#提交自定义镜像到docker</span></span><br><span class="line"></span><br><span class="line">docker <span class="comment">#数据卷挂载</span></span><br><span class="line">docker run -it -v /home/ceshi:/home centos /bin/bash</span><br><span class="line"></span><br><span class="line"><span class="comment">#启动mysql</span></span><br><span class="line"><span class="comment">#后台运行 -d  端口映射 -p 卷挂载 配置，数据  环境设置-e 启动密码 设置名字 启动版本</span></span><br><span class="line">docker run -d -p 3310:3306 -v /home/mysql/conf:/etc/mysql/conf.d -v /home/mysql/data:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=123456 --name mysql01 mysql:5.7</span><br><span class="line"></span><br><span class="line">docker run -d -p 3310:3306 -v /home/mysql/conf:/etc/mysql/mysql.conf.d -v /home/mysql/data:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=123456 --name mysql01 mysql:5.7</span><br><span class="line"></span><br><span class="line">docker run -d -p 8080:80 --name nginmx01 -v juming-nginx01:/etc/nginx nginx <span class="comment">#具名挂载</span></span><br><span class="line">docker run -d -p 8080:80 --name nginmx01 -v /etc/nginx nginx <span class="comment">#匿名名挂载</span></span><br><span class="line"><span class="comment">#查看挂载卷名</span></span><br><span class="line">docker volume ls</span><br><span class="line"><span class="comment">#查看挂载卷信息</span></span><br><span class="line">docker volume inspect 卷名字</span><br><span class="line"><span class="comment">#匿名挂载 具名挂载</span></span><br><span class="line"></span><br><span class="line">docker run -d -p 8080:80 --name nginmx01 -v juming-nginx01:/etc/nginx:ro nginx <span class="comment">#只读</span></span><br><span class="line">docker run -d -p 8080:80 --name nginmx01 -v juming-nginx01:/etc/nginx:rw nginx <span class="comment">#可读可写</span></span><br><span class="line"><span class="comment">#查看端口</span></span><br><span class="line">netstat -anp | grep pid</span><br><span class="line"></span><br><span class="line">dockerfile<span class="comment">#构建镜像</span></span><br><span class="line">FROM centos</span><br><span class="line"></span><br><span class="line">VOLUME [<span class="string">&quot;volume01&quot;</span>,<span class="string">&quot;volume02&quot;</span>]</span><br><span class="line"></span><br><span class="line">CMD <span class="built_in">echo</span> <span class="string">&quot;-------------end-------------&quot;</span></span><br><span class="line">CMD /bin/bash</span><br><span class="line"></span><br><span class="line">docker build -f /home/docker-test-volume/dockerfile1 -t chexi/centos:1.0 . <span class="comment">#构建命令</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#容器数据卷挂载--volumes-from /继承</span></span><br><span class="line">docker run -it --name docker02 --volumes-from docker01 chexi/centos:1.0 /bin/bash</span><br><span class="line"><span class="comment">#不单单是数据共享而是数据备份</span></span><br><span class="line"></span><br><span class="line">构建复杂镜像</span><br><span class="line">FROM             <span class="comment">#基础镜镜像，一切从这里开始构建</span></span><br><span class="line">MAINTAINER  <span class="comment">#镜像是谁写的，姓名+邮箱</span></span><br><span class="line">RUN                <span class="comment">#镜像构建的时候需要运行的命令</span></span><br><span class="line">ADD                <span class="comment">#步骤: tomcat镜像，这个tomcat压缩包!添加内容</span></span><br><span class="line">WORKDIR       <span class="comment">#镜像的工作目录</span></span><br><span class="line">VOL UME        <span class="comment">#挂载的目录</span></span><br><span class="line">EXPOSE            <span class="comment">#保留端口配置</span></span><br><span class="line">CMD               <span class="comment">#指定这个容器启动的时候要运行的命令,只有最后一个会生效，可被替代</span></span><br><span class="line">ENTRYPOINT  <span class="comment">#指定这个容器启动的时候要运行的命令,</span></span><br><span class="line">ONBUILD       <span class="comment">#当构建一个被继承DockerFile这个时候就会运行ONBUILD的指令。触发指令.</span></span><br><span class="line">COPY     复制 <span class="comment">#类似ADD，将我们文件拷贝到镜像中</span></span><br><span class="line">ENV环境变化 <span class="comment">#构建的时候设置环境变量!</span></span><br><span class="line"></span><br><span class="line">docker <span class="built_in">history</span> <span class="comment">#镜像id查看镜像构成过程！</span></span><br><span class="line"></span><br><span class="line">CMD 和 ENTRYPOINT  <span class="comment">#区别</span></span><br><span class="line"></span><br><span class="line">FROM centos</span><br><span class="line">CMD [<span class="string">&quot;ls&quot;</span>,<span class="string">&quot;-a&quot;</span>]</span><br><span class="line"></span><br><span class="line">docker build -f dockerfile-test-cmd -t testcmd .</span><br><span class="line"></span><br><span class="line">[root@chexi dockerfile]<span class="comment"># docker run 262aa76d5200</span></span><br><span class="line">.</span><br><span class="line">..</span><br><span class="line">.dockerenv</span><br><span class="line">bin</span><br><span class="line">dev</span><br><span class="line">etc</span><br><span class="line">home</span><br><span class="line">lib</span><br><span class="line">lib64</span><br><span class="line">lost+found</span><br><span class="line">media</span><br><span class="line">mnt</span><br><span class="line">opt</span><br><span class="line">proc</span><br><span class="line">root</span><br><span class="line">run</span><br><span class="line">sbin</span><br><span class="line">srv</span><br><span class="line">sys</span><br><span class="line">tmp</span><br><span class="line">usr</span><br><span class="line"></span><br><span class="line"><span class="comment">#CMD只有最后一个命令会生效不能追加只能替换 docker run 262aa76d5200 -l追加-l报错</span></span><br><span class="line">ENTRYPOINT  <span class="comment">#可追加 docker run 262aa76d5200 -l追加-l正常显示</span></span><br><span class="line"></span><br><span class="line">Tomcat<span class="comment">#镜像</span></span><br><span class="line"><span class="comment">#官方命名 Dockerfile</span></span><br><span class="line">FROM centos <span class="comment">#基础镜像</span></span><br><span class="line"></span><br><span class="line">MAINTAINER chexi&lt;Email&gt; <span class="comment">#作者</span></span><br><span class="line"></span><br><span class="line">COPY readme.txt /usr/<span class="built_in">local</span>/readme.txt <span class="comment">#复制文件到镜像内</span></span><br><span class="line"></span><br><span class="line">ADD apache-tomcat-9.0.38.tar.gz /usr/<span class="built_in">local</span> <span class="comment">#添加镜像功能</span></span><br><span class="line">ADD jdk-11.0.10_linux-x64_bin.tar.gz /usr/<span class="built_in">local</span> <span class="comment">#添加镜像依赖</span></span><br><span class="line"></span><br><span class="line">RUN yum -y install vim <span class="comment">#添加镜像命令</span></span><br><span class="line"></span><br><span class="line">ENV MYPATH /usr/<span class="built_in">local</span> <span class="comment">#镜像环境变量</span></span><br><span class="line">WORKDIR <span class="variable">$MYPATH</span> <span class="comment">#工作目录</span></span><br><span class="line"></span><br><span class="line">ENV JAVA_HOME /usr/<span class="built_in">local</span>/jdk-11.0.10 jdk</span><br><span class="line">ENV CLASSPATH <span class="variable">$JAVA_HOME</span>/lib/dt.jar:<span class="variable">$JAVA_HOMT</span>/lib/tools.jar</span><br><span class="line">ENV CATALINA_HOME /usr/<span class="built_in">local</span>/apache-tomcat-9.0.38</span><br><span class="line">ENV CATALINA_BASH /usr/<span class="built_in">local</span>/apache-tomcat-9.0.38</span><br><span class="line">ENV PATH <span class="variable">$PATH</span>:<span class="variable">$JAVA_HOME</span>/bin:<span class="variable">$CATALINA_HOME</span>/lib:CATALINA_HOME/bin</span><br><span class="line"></span><br><span class="line">EXPOSE 8080</span><br><span class="line">CMD /usr/<span class="built_in">local</span>/apache-tomcat-9.0.38/bin/startup.sh &amp;&amp; tail -F /usr/<span class="built_in">local</span>/apache-tomcat-9.0.38/bin/logs/catalina.out</span><br><span class="line"></span><br><span class="line"><span class="comment">#启动自定义tomcat</span></span><br><span class="line">docker run -d -p 9090:8080 --name chexitomcat -v /home/tomcat/<span class="built_in">test</span>:/usr/<span class="built_in">local</span>/apache-tomcat-9.0.38/webapps/<span class="built_in">test</span> -v /home/tomcat/logs:/src/<span class="built_in">local</span>/apache-tomcat-9.0.38/logs diytomcat</span><br><span class="line"></span><br><span class="line"><span class="comment">#修改镜像名称</span></span><br><span class="line">docker tag ad9bdfc002e7 oracle-12c-ee:latest</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#把镜像提交到dockerhub上</span></span><br><span class="line"><span class="comment">#注册登录</span></span><br><span class="line">docker login -u password</span><br><span class="line"><span class="comment">#提交的镜像必须  docker push docker名称/镜像名称：版本</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#把镜像提交到阿里云</span></span><br><span class="line"><span class="comment">#注册登录</span></span><br><span class="line"><span class="comment">#建库建命名 提交</span></span><br><span class="line">docker login --username=username registry.cn-hangzhou.aliyuncs.com <span class="comment">#登录</span></span><br><span class="line">docker tag [ImageId] registry.cn-hangzhou.aliyuncs.com/chexi/docker:<span class="comment">#[镜像版本号] 改名</span></span><br><span class="line">docker push registry.cn-hangzhou.aliyuncs.com/chexi/docker:<span class="comment">#[镜像版本号] 提交</span></span><br><span class="line"></span><br><span class="line">docker rmi -f $(docker images -aq)</span><br><span class="line"><span class="comment">#移除所有镜像</span></span><br><span class="line"><span class="comment">#移除所有容器</span></span><br><span class="line"><span class="comment">#Docker网络</span></span><br><span class="line"></span><br><span class="line">ip addr <span class="comment">#网卡</span></span><br><span class="line"></span><br><span class="line">docker <span class="built_in">exec</span> -it tomcat01 ip addr</span><br><span class="line"><span class="comment">#查看网卡</span></span><br><span class="line"><span class="comment">#容器的网卡都是一对一对的</span></span><br><span class="line"></span><br><span class="line">docker <span class="built_in">exec</span> -it tomcat02 ping 172.18.0.2</span><br><span class="line"><span class="comment">#启动容器之间可以相互ping通</span></span><br><span class="line">evth-pair <span class="comment">#是一对虚拟设备接口 一段连接协议 一段彼此相连 正因为这个特性可以充当连接桥梁 连接各种网络设备</span></span><br><span class="line">OpenStac docker OVS <span class="comment">#都是通过evth-pair实现的</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#容器删除对应的网桥随即删除</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#容器之间不用容器名ping通 --link</span></span><br><span class="line">docker run -d -P --name tomcat03 --link tomcat02 tomcat</span><br><span class="line">docker <span class="built_in">exec</span> -it tomcat03 ping tomcat02</span><br><span class="line"></span><br><span class="line"> <span class="comment">#docker network ls</span></span><br><span class="line">查看网卡信息</span><br><span class="line"></span><br><span class="line">[root@chexi ~]<span class="comment"># docker exec -it tomcat03 cat /etc/hosts</span></span><br><span class="line">127.0.0.1	localhost</span><br><span class="line">::1	localhost ip6-localhost ip6-loopback</span><br><span class="line">fe00::0	ip6-localnet</span><br><span class="line">ff00::0	ip6-mcastprefix</span><br><span class="line">ff02::1	ip6-allnodes</span><br><span class="line">ff02::2	ip6-allrouters</span><br><span class="line">172.18.0.3	tomcat02 6538d7f5e351</span><br><span class="line">172.18.0.4	ab5f6b8bc810</span><br><span class="line"></span><br><span class="line">自定义网络 --driver bridge 默认桥接 子网  --subnet ip/16/24 -gateway ip网关</span><br><span class="line">docker network create  --driver bridge --subnet ip/16 --gateway ip mynet</span><br><span class="line"></span><br><span class="line"><span class="comment">#把tomcat容器放在自定义网络里可以互相ping</span></span><br><span class="line">docker run -d -P --name tomcat-net01 --net mynet tomcat</span><br><span class="line">docker run -d -P --name tomcat-net02 --net mynet tomcat</span><br><span class="line"></span><br><span class="line">docker <span class="built_in">exec</span> -it tomcat-net01 ping tomcat-net02</span><br><span class="line">docker <span class="built_in">exec</span> -it tomcat-net02 ping tomcat-net01</span><br><span class="line"></span><br><span class="line"><span class="comment">#连接网络命令</span></span><br><span class="line">docker network connect --<span class="built_in">help</span></span><br><span class="line"><span class="comment">#联通docker01的tomcat</span></span><br><span class="line">docker network connect mynet tomcat <span class="comment">#一个容器两个ip地址</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#配置六个redis</span></span><br><span class="line"><span class="keyword">for</span> port <span class="keyword">in</span> $(seq 1 6); \</span><br><span class="line"><span class="keyword">do</span> \</span><br><span class="line">mkdir -p /mydata/redis/node-<span class="variable">$&#123;port&#125;</span>/conf</span><br><span class="line">touch /mydata/redis/node-<span class="variable">$&#123;port&#125;</span>/conf/redis.conf</span><br><span class="line">cat &lt;&lt; <span class="string">EOF &gt;&gt;/mydata/redis/node-$&#123;port&#125;/conf/redis.conf</span></span><br><span class="line"><span class="string">port 6379</span></span><br><span class="line"><span class="string">bind 0.0.0.0</span></span><br><span class="line"><span class="string">cluster-enabled yes</span></span><br><span class="line"><span class="string">cluster-config-file nodes.conf</span></span><br><span class="line"><span class="string">cluster-node-timeout 5000</span></span><br><span class="line"><span class="string">cluster-announce-ip 172.38.0.1$&#123;port&#125;</span></span><br><span class="line"><span class="string">cluster-announce-bus-port 16379</span></span><br><span class="line"><span class="string">appendonly yes</span></span><br><span class="line"><span class="string">EOF</span></span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#启动6个redis容器</span></span><br><span class="line">docker run -p 6376:6379 -p 16376:16379 --name redis-6  \</span><br><span class="line">-v /mydata/redis/node-6/data:/data  \</span><br><span class="line">-v /mydata/redis/node-6/conf/redis.conf:/etc/redis/redis.conf  \</span><br><span class="line">-d --net redis --ip 172.38.0.16 redis:latest redis-server /etc/redis/redis.conf</span><br><span class="line"></span><br><span class="line"><span class="comment">#创建redis集群</span></span><br><span class="line"><span class="comment">#随便进入一个</span></span><br><span class="line">docker <span class="built_in">exec</span> -it redis-1 /bin/sh</span><br><span class="line"></span><br><span class="line">redis-cli --cluster create 172.38.0.11:6379 172.38.0.12:6379 172.38.0.13:6379 172.38.0.14:6379 172.38.0.15:6379 172.38.0.16:6379 --cluster-replicas 1</span><br><span class="line"><span class="comment">#集群创建 yes</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#查看集群信息</span></span><br><span class="line"><span class="comment"># redis-cli -c</span></span><br><span class="line">127.0.0.1:6379&gt; cluster info</span><br><span class="line"></span><br><span class="line"><span class="comment">#节点信息 3主3从</span></span><br><span class="line">127.0.0.1:6379&gt; cluster nodes</span><br><span class="line">4672101d901a66f93bd3627b60d9c0a499b776f9 172.38.0.16:6379@16379 slave da231f5dd918922bfa784c74b15eaf82f61321c8 0 1619080465579 2 connected</span><br><span class="line">f4b914ebc94ce5be3fcacde4b18693e76223bc4e 172.38.0.14:6379@16379 slave 39c916f98f40cd831dced15c3a66c59884d66a79 0 1619080465000 3 connected</span><br><span class="line">e2b011d57c33b35e3a994c0128b14fb168b53f7b 172.38.0.15:6379@16379 slave f1c517a5d54b9501c7b9dd939b0f29ef14f5e775 0 1619080464075 1 connected</span><br><span class="line">da231f5dd918922bfa784c74b15eaf82f61321c8 172.38.0.12:6379@16379 master - 0 1619080464000 2 connected 5461-10922</span><br><span class="line">39c916f98f40cd831dced15c3a66c59884d66a79 172.38.0.13:6379@16379 master - 0 1619080465981 3 connected 10923-16383</span><br><span class="line">f1c517a5d54b9501c7b9dd939b0f29ef14f5e775 172.38.0.11:6379@16379 myself,master - 0 1619080463000 1 connected 0-546</span><br><span class="line"></span><br><span class="line"> <span class="built_in">set</span> q p</span><br><span class="line"><span class="comment">#到3</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#停掉3发现主机挂掉从机接管</span></span><br><span class="line">4672101d901a66f93bd3627b60d9c0a499b776f9 172.38.0.16:6379@16379 slave da231f5dd918922bfa784c74b15eaf82f61321c8 0 1619080874000 2 connected</span><br><span class="line">f4b914ebc94ce5be3fcacde4b18693e76223bc4e 172.38.0.14:6379@16379 myself,master - 0 1619080875000 7 connected 10923-16383</span><br><span class="line">e2b011d57c33b35e3a994c0128b14fb168b53f7b 172.38.0.15:6379@16379 slave f1c517a5d54b9501c7b9dd939b0f29ef14f5e775 0 1619080875000 1 connected</span><br><span class="line">f1c517a5d54b9501c7b9dd939b0f29ef14f5e775 172.38.0.11:6379@16379 master - 0 1619080874000 1 connected 0-5460</span><br><span class="line">da231f5dd918922bfa784c74b15eaf82f61321c8 172.38.0.12:6379@16379 master - 0 1619080876000 2 connected 5461-10922</span><br><span class="line">39c916f98f40cd831dced15c3a66c59884d66a79 172.38.0.13:6379@16379 master,fail - 1619080712641 1619080710123 3 connected</span><br></pre></td></tr></table></figure></li>
+</ol>
+
+    </div>
+
+    
+    
+    
+        <div class="reward-container">
+  <div>原创技术分享，您的支持将鼓励我继续创作</div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="/images/wechatpay.png" alt="chexi 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="/images/alipay.png" alt="chexi 支付宝">
+        <p>支付宝</p>
+      </div>
+
+  </div>
+</div>
+
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>chexi
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://example.com/2021/11/18/docker%E5%91%BD%E4%BB%A4-linux/" title="docker命令-linux">http://example.com/2021/11/18/docker命令-linux/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/images/wechat_channel.jpg">
+            <span class="icon">
+              <i class="fab fa-weixin"></i>
+            </span>
+
+            <span class="label">WeChat</span>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      
+        <div>
+          <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:24px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+        </div>
+      
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/docker/" rel="tag"># docker</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/11/18/%E5%8C%BF%E5%90%8D%E5%86%85%E9%83%A8%E7%B1%BB-java/" rel="prev" title="匿名内部类-java">
+      <i class="fa fa-chevron-left"></i> 匿名内部类-java
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    
+  <div class="comments">
+    <div id="lv-container" data-id="city" data-uid="MTAyMC81NDY3MS8zMTE0Mg=="></div>
+  </div>
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%BB%8D"><span class="nav-number">1.</span> <span class="nav-text">1 . 基本介绍</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="chexi"
+      src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">chexi</p>
+  <div class="site-description" itemprop="description">越努力，越幸运！</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">7</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/weichexi" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;weichexi" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:chexi_0714@163.com" title="E-Mail → mailto:chexi_0714@163.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.csdn.net/%E7%9D%80%E7%9C%9F" title="CSDN → https:&#x2F;&#x2F;www.csdn.net&#x2F;着真" rel="noopener" target="_blank"><i class="fa codiepie fa-fw"></i>CSDN</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      链接网站
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://www.baidu.com/" title="https:&#x2F;&#x2F;www.baidu.com&#x2F;" rel="noopener" target="_blank">百度</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://www.bilibili.com/" title="https:&#x2F;&#x2F;www.bilibili.com&#x2F;" rel="noopener" target="_blank">哔哩哔哩</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">chexi</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="站点总字数">24k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">22 分钟</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user 访问次数"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye 总访问量次"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  
+  <script color='0,0,255' opacity='0.5' zIndex='-1' count='99' src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+<script>
+NexT.utils.loadComments(document.querySelector('#lv-container'), () => {
+  window.livereOptions = {
+    refer: location.pathname.replace(CONFIG.root, '').replace('index.html', '')
+  };
+  (function(d, s) {
+    var j, e = d.getElementsByTagName(s)[0];
+    if (typeof LivereTower === 'function') { return; }
+    j = d.createElement(s);
+    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+    j.async = true;
+    e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+});
+</script>
+
+</body>
+</html>
