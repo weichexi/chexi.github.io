@@ -9,8 +9,36 @@
     <atom:link href="http://example.com/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>越努力，越幸运！</description>
-    <pubDate>Thu, 18 Nov 2021 09:27:51 GMT</pubDate>
+    <pubDate>Mon, 22 Nov 2021 09:40:08 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>java经典基础面经—1</title>
+      <link>http://example.com/2021/11/22/java%E7%BB%8F%E5%85%B8%E5%9F%BA%E7%A1%80%E9%9D%A2%E7%BB%8F%E2%80%941/</link>
+      <guid>http://example.com/2021/11/22/java%E7%BB%8F%E5%85%B8%E5%9F%BA%E7%A1%80%E9%9D%A2%E7%BB%8F%E2%80%941/</guid>
+      <pubDate>Mon, 22 Nov 2021 09:16:32 GMT</pubDate>
+      
+        
+        
+      <description>&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;谈谈你对java的理解&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;li</description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<ol><li><p>谈谈你对java的理解</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">1. 首先它是面向对象编程语言，</span><br><span class="line">2. 具有跨平台的特性（不同的操作系统，不同版本的jdk，主要通过jvm虚拟机实现，它会从软件层面屏蔽不同操作系统在底层硬件与指令的区别）</span><br><span class="line">Java通过不同的系统、不同版本、不同位数的java虚拟机（jvm),来屏蔽不同的系统指令集差异而对外体统统一的接口(java AP1),对于我们普通的java开发者而言，只需要按照接口开发即可。如果我系统需要部署到不同的环境时，只需在系统上面按照对应版本的虚拟机即可。</span><br><span class="line">3. 其一共有三大特征: 继承 封装 多态..</span><br><span class="line">4. 有丰富的类库，</span><br><span class="line">5. 有java ee的一套完整的标准</span><br><span class="line">6. 等等......谈谈你对java的理解</span><br></pre></td></tr></table></figure></li><li><p>如何理解面向对象，面向编程</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">怎么说呢，举个例子，比如说洗衣机洗衣服</span><br><span class="line">1. 首先面向过程会将这个任务分解成一系列步骤每个步骤都是一个函数(方法) </span><br><span class="line">第一步打开洗衣机，</span><br><span class="line">第二步放衣服，</span><br><span class="line">第三步放洗衣粉，</span><br><span class="line">第四步清洗，</span><br><span class="line">第五步烘干。</span><br><span class="line">2. 如果说是面向对象呢就会先拆成两个对象 人和洗衣机</span><br><span class="line">人呢 主要做打开洗衣机，放衣服，放洗衣粉，</span><br><span class="line">洗衣机呢，主要负责清洗，烘干</span><br><span class="line">3. 通过这个小例子可以看出 </span><br><span class="line">面向过程更加注重事情的过程，步骤和顺序，</span><br><span class="line">而面向对象更加注重事情的参与者以及参与者所作的事情</span><br><span class="line">所以面向过程会比较直接更加高效</span><br><span class="line">而面向对象更加易于复用、扩展和维护等</span><br></pre></td></tr></table></figure></li><li><p>如何理解面向对象，面向编程</p><p>`````bash</p></li></ol>]]></content:encoded>
+      
+      
+      <category domain="http://example.com/categories/javat/">javat</category>
+      
+      
+      <category domain="http://example.com/tags/%E9%9D%A2%E7%BB%8F/">面经</category>
+      
+      
+      <comments>http://example.com/2021/11/22/java%E7%BB%8F%E5%85%B8%E5%9F%BA%E7%A1%80%E9%9D%A2%E7%BB%8F%E2%80%941/#disqus_thread</comments>
+      
+    </item>
     
     <item>
       <title>docker命令-linux</title>
