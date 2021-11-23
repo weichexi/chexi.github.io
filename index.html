@@ -1,0 +1,1494 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://weichexi.cn/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://weichexi.cn/images/big/VIP.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://weichexi.cn/images/small/VIP.png">
+  <link rel="mask-icon" href="https://weichexi.cn/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"manual","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="越努力，越幸运！">
+<meta property="og:type" content="website">
+<meta property="og:title" content="澈溪">
+<meta property="og:url" content="http://example.com/index.html">
+<meta property="og:site_name" content="澈溪">
+<meta property="og:description" content="越努力，越幸运！">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="chexi">
+<meta property="article:tag" content="java">
+<meta property="article:tag" content="mysql">
+<meta property="article:tag" content="vue等">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://example.com/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : true,
+    isPost : false,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>澈溪</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/rss2.xml" title="澈溪" type="application/rss+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+	<a target="_blank" rel="noopener" href="https://weichexi.cn/" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; left: 0; transform: scale(-1, 1);" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style></a>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">澈溪</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">Chexi</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-resources">
+
+    <a href="/resources/" rel="section"><i class="fa fa-download fa-fw"></i>资源</a>
+
+  </li>
+        <li class="menu-item menu-item-schedule">
+
+    <a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>日程表</a>
+
+  </li>
+        <li class="menu-item menu-item-sitemap">
+
+    <a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>站点地图</a>
+
+  </li>
+        <li class="menu-item menu-item-commonweal">
+
+    <a href="/404/" rel="section"><i class="fa fa-heartbeat fa-fw"></i>公益 404</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content index posts-expand">
+            
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/11/23/mysql%E7%BB%8F%E5%85%B8%E5%9F%BA%E7%A1%80%E9%9D%A2%E7%BB%8F-1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="chexi">
+      <meta itemprop="description" content="越努力，越幸运！">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="澈溪">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/11/23/mysql%E7%BB%8F%E5%85%B8%E5%9F%BA%E7%A1%80%E9%9D%A2%E7%BB%8F-1/" class="post-title-link" itemprop="url">mysql经典基础面经-1</a>
+        </h2>
+
+        <div class="post-meta">
+		
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-11-23 10:02:56 / 修改时间：13:35:21" itemprop="dateCreated datePublished" datetime="2021-11-23T10:02:56+08:00">2021-11-23</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/mysql/" itemprop="url" rel="index"><span itemprop="name">mysql</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>3.9k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>4 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <ol>
+<li><p>主键策略</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">1. 自动增长</span><br><span class="line">优点:</span><br><span class="line">简单，代码方便，性能还可以接受</span><br><span class="line">数字ID天然生成，对分页或者需要排序的结果很有帮助</span><br><span class="line">缺点:</span><br><span class="line">加入性能有限，难于扩展</span><br><span class="line">分表，分库会有麻烦</span><br><span class="line">2. UUID</span><br><span class="line">优点:</span><br><span class="line">每次生成随机唯一的值</span><br><span class="line">分表分库无影响</span><br><span class="line">缺点:</span><br><span class="line">排序麻烦</span><br><span class="line">ID字符长，查询的效率比较低</span><br><span class="line">3. Redis原子操作生成</span><br><span class="line">优点</span><br><span class="line">不依赖与数据库，灵活方便，且性能优于数据库</span><br><span class="line">数字ID天然排序，对分页或者排序有帮助</span><br><span class="line">缺点</span><br><span class="line">依赖redis，需要引入增加系统复杂度</span><br><span class="line">需要编码和配置增加工作量</span><br><span class="line">4. MP策略 雪花算法等</span><br></pre></td></tr></table></figure></li>
+<li><p>常用函数</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">count(x) 计算总行数 例 count(1) count(*) count(列名)等</span><br><span class="line">sum(x) 计算和 例 sum(数值类型列名)</span><br><span class="line">avg(x) 平均值 例 avg(数值类型列名)</span><br><span class="line">max(x) 最大值 例 max(数值类型列名)</span><br><span class="line">min(x) 最小值 例 min(数值类型列名)</span><br><span class="line">round(number),round(number,len),cile(number) 四舍五入计算使用 </span><br><span class="line">TRUNCATE(number,len) 不进行四舍五入计算</span><br><span class="line">RAND() 随机生成0-1之间一个随机数 可以用作表查询order by rand()随机取前几列数据内容</span><br><span class="line">IFNULL(1,0); 第一个参数不为空返回第一个参数，否则返回第二个参数</span><br><span class="line">ISNULL(1) 如果参数为空返回1否则返回0</span><br><span class="line">NULLIF(1,2) 如果参数1等于参数2 返回null,否则返回参数1</span><br><span class="line">casewhen 可配合sum函数做 简单函数 搜索函数 行转列 列转行</span><br><span class="line">LEFT(s,n)、RIGHT(s,n) 截取字符串 左，右 s代表截取内容 n代表截取开始位数</span><br><span class="line">TRIM(s) 返回字符串s删除了两边空格之后的字符串 去除两端空白</span><br><span class="line">SUBSTRING(s,n,len)、MID(s,n,len)</span><br><span class="line">两个函数作用相同，从字符串s中返回一个第n个字符开始、长度为len的字符串</span><br><span class="line">CONCAT(s1,s2…sn)字符串拼接s1,s2 等多个字符串合并为一个字符串 例模糊查询 concat(<span class="string">&#x27;%&#x27;</span>,<span class="string">&#x27;value/#&#123;value&#125;&#x27;</span>,<span class="string">&#x27;%&#x27;</span>)</span><br><span class="line">date_format(now(), <span class="string">&#x27;%Y-%m-%d&#x27;</span>);  时间转字符串(时间，格式)</span><br><span class="line">unix_timestamp(now());   时间转时间戳(时间)</span><br><span class="line">str_to_date(<span class="string">&#x27;2016-01-02&#x27;</span>, <span class="string">&#x27;%Y-%m-%d %H&#x27;</span>);  字符串转时间(字符串,格式)</span><br><span class="line">unix_timestamp(<span class="string">&#x27;2016-01-02&#x27;</span>);   字符串转时间戳(字符串)</span><br><span class="line">from_unixtime(1451997924);   时间戳转时间(时间戳)</span><br><span class="line">from_unixtime(1451997924,<span class="string">&#x27;%Y-%d&#x27;</span>);  时间戳转字符串(时间戳，格式)</span><br></pre></td></tr></table></figure></li>
+<li><p>事务隔离级别</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">1. 读未提交（READ UNCOMMITTED）</span><br><span class="line">2. 读提交 （READ COMMITTED）</span><br><span class="line">3. 可重复读 （REPEATABLE READ）</span><br><span class="line">4. 串行化 （SERIALIZABLE）</span><br><span class="line">从上往下，隔离强度逐渐增强，性能逐渐变差</span><br><span class="line">默认 读提交</span><br></pre></td></tr></table></figure></li>
+<li><p>mysql储存结构、日志(InnoDB和MyIsams数据文件结构)</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">物理结构</span><br><span class="line">1. MySQL是通过文件系统对数据和索引进行存储的。</span><br><span class="line">2. MySQL从物理结构上可以分为日志文件和数据索引文件。</span><br><span class="line">3. MySQL在Linux中的数据索引文件和日志文件都在/var/lib/mysql目录下。</span><br><span class="line">4. 日志文件采用顺序IO方式存储、数据文件采用随机IO方式存储。</span><br><span class="line">说明：</span><br><span class="line">顺序IO：记录首地址与偏移量，只存储和查询，记录速度快，只能追加数据，浪费空间，适用于日志存储；</span><br><span class="line">随机IO：需要记录地址[0x9559],随机位置存入，省空间，相对慢，适用于数据和索引的存储；</span><br><span class="line">日志文件 分为 </span><br><span class="line">1.errorlog 错误日志 </span><br><span class="line">2.bin <span class="built_in">log</span> 二进制日志（记录数据变化，binlog记录了数据库所有的定义语句和操作语句）操作需要事务提交</span><br><span class="line">3.general query <span class="built_in">log</span> 通用查询日志 全面记录CRUD日志，非常耗费性能，所以生产环境不开启；</span><br><span class="line">4.slow query <span class="built_in">log</span> 慢查询日志(重要) 针对sql调优的日志，记录并定位消耗资源高的select(执行慢)；默认是关闭状态，需要通过设置my.cnf进行开启；</span><br><span class="line">5.redo <span class="built_in">log</span> 重做日志</span><br><span class="line">6.undo <span class="built_in">log</span> 回滚日志</span><br><span class="line">7.relay <span class="built_in">log</span> 中继日志</span><br><span class="line">InnoDB数据文件 </span><br><span class="line">1. .frm文件：主要存放与表相关的数据信息,主要包括表结构的定义信息；</span><br><span class="line">2. .ibd：使用独享表空间存储表数据和索引信息，一张表对应一个ibd文件；</span><br><span class="line">3. ibdata文件：使用共享表空间存储表数据和索引信息，所有表共同使用一个或者多个ibdata文件。</span><br><span class="line">MyIsam数据文件</span><br><span class="line">很少使用，如果需要应用MyIsam引擎可以用redis替代；</span><br><span class="line">1. .frm文件：主要存放与表相关的数据信息,主要包括表结构的定义信息；</span><br><span class="line">2. .myd文件：主要用来存储表数据信息；</span><br><span class="line">3. .myi文件：主要用来存储表数据文件中任何索引的数据树。</span><br></pre></td></tr></table></figure></li>
+<li><p>事务</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">1. 事务是并发控制的单位，使用户定义的一个操作序列，这些操作要不都做，要不都不做，是一个不可分割的工作单位</span><br><span class="line">2. 四大特征：</span><br><span class="line">原子性：就是事务内操作不可分割，要么都成功，要么都失败</span><br><span class="line">一致性：要么都成功逃命都失败，失败的话需要回滚</span><br><span class="line">隔离性：一个事务开始后，不能后其他事务干扰</span><br><span class="line">持久性/持续性：表示事务开始了，就不能终止</span><br></pre></td></tr></table></figure></li>
+<li><p>InnoDB和MyIsams区别简概</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">MyIsam引擎和innodb的区别</span><br><span class="line">1. 索引存储不一样，innodb的话数据和索引是存在一块的而MyIsam数据和索引是分开储存的</span><br><span class="line">2. innodb支持事务，MyIsam不支持</span><br><span class="line">3. innodb支持行锁，和表锁，而MyIsam只支持行锁</span><br><span class="line">4. innodb支持外键，MyIsam不支持</span><br><span class="line">说明：</span><br><span class="line">内存大的话可能innodb效率比较高，内存小的话可能MyIsam效率比较高 </span><br><span class="line">MyIsam是直接读取的，而innodb不是直接读取的，他是先读取到内存在进行读取</span><br></pre></td></tr></table></figure></li>
+<li><p>回表，死锁</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">回表：</span><br><span class="line">就简单来说就是 先通过索引查询定位到指定列id，在通过id聚集索引查询进行返回相当于走了两次索引树。</span><br><span class="line">如何避免：可以通过索引覆盖</span><br><span class="line">1. 索引覆盖是一种避免回表查询的优化策略。具体的做法就是将要查询的数据作为索引列建立普通索引（可以是单列索引，也可以一个索引语句定义所有要查询的列，即联合索引），这样的话就可以直接返回索引中的的数据，不需要再通过聚集索引去定位行记录，避免了回表的情况发生。</span><br><span class="line">2. 覆盖索引的定义与注意事项</span><br><span class="line">如果一个索引覆盖（包含）了所有需要查询的字段的值，这个索引就是覆盖索引。因为索引中已经包含了要查询的字段的值，因此查询的时候直接返回索引中的字段值就可以了，不需要再到表中查询，避免了对主键索引的二次查询，也就提高了查询的效率。</span><br><span class="line">说明：不是所有类型的索引都可以成为覆盖索引的。因为覆盖索引必须要存储索引的列值，而哈希索引、空间索引和全文索引等都不存储索引列值，索引MySQL只能使用B-Tree索引做覆盖索引。</span><br><span class="line">另外，当发起一个被索引覆盖的查询（索引覆盖查询）时，在explain（执行计划）的Extra列可以看到【Using Index】的信息。</span><br><span class="line">覆盖索引的优点</span><br><span class="line">1.索引条目通常远小于数据行的大小，因为覆盖索引只需要读取索引，极大地减少了数据的访问量。</span><br><span class="line">2.索引是按照列值顺序存储的，对于IO密集的范围查找会比随机从磁盘读取每一行数据的IO小很多。</span><br><span class="line">3.一些存储引擎比如MyISAM在内存中只缓存索引，数据则依赖操作系统来缓存，因此要访问数据的话需要一次系统调用，使用覆盖索引则避免了这一点。</span><br><span class="line">4.由于InnoDB的聚簇索引，覆盖索引对InnoDB引擎下的数据库表特别有用。因为InnoDB的二级索引在叶子节点中保存了行的主键值，如果二级索引能够覆盖查询，就避免了对主键索引的二次查询。</span><br><span class="line">死锁的话：</span><br><span class="line">首先我先说一下我对mysql中锁的认识，有三个，分别是页锁，表锁，行锁。</span><br><span class="line">1. 首先表锁的话，简单来说就是开销小，加锁快，不会出现死锁，但是发生锁冲突较高，并发度低，</span><br><span class="line">2. 行锁的话大概和表锁相反，就是开销大，加锁慢，会出现死锁，发生所冲突较低，并发度较高</span><br><span class="line">3. 页锁的话介于他们两者之间，</span><br><span class="line">4. 那死锁的话，简单来说就是两个事务争抢资源而导致互不相让，互相等待造成死循环，</span><br><span class="line">说明：</span><br><span class="line">1. 锁冲突的话一般来讲就是表中的几个锁产生了冲突，通常来说，读写锁最有可能</span><br><span class="line">2. 不同事务同时访问一个表的概率很大，但同时访问一行的概率很小；</span><br><span class="line">3. 所以表锁不会造成死锁，但是锁冲突会比较高，而行锁会造成死锁，所冲突比较低</span><br><span class="line">个人观点：</span><br><span class="line">表锁不会出现死锁的原因是因为：我感觉是因为表锁的话，就是他会一次性获得所有锁，所以就是要么全部满足，要么全部等待</span><br></pre></td></tr></table></figure>
+
+<p>总结：Quote Mysql : he world’s most popular open source database! Ah ha ha~~~~</p>
+<p>每日一句： <em>Today is better than yesterday. There is hope for tomorrow</em></p>
+<p><em>文章支持:  清醒的夜晚和不让摸的🐟</em></p>
+</li>
+</ol>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/11/22/java%E7%BB%8F%E5%85%B8%E5%9F%BA%E7%A1%80%E9%9D%A2%E7%BB%8F%E2%80%941/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="chexi">
+      <meta itemprop="description" content="越努力，越幸运！">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="澈溪">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/11/22/java%E7%BB%8F%E5%85%B8%E5%9F%BA%E7%A1%80%E9%9D%A2%E7%BB%8F%E2%80%941/" class="post-title-link" itemprop="url">java经典基础面经—1</a>
+        </h2>
+
+        <div class="post-meta">
+		
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-11-22 17:16:32" itemprop="dateCreated datePublished" datetime="2021-11-22T17:16:32+08:00">2021-11-22</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-11-23 10:04:02" itemprop="dateModified" datetime="2021-11-23T10:04:02+08:00">2021-11-23</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/java/" itemprop="url" rel="index"><span itemprop="name">java</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.5k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <ol>
+<li><p>谈谈你对java的理解</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">1. 首先它是面向对象编程语言，</span><br><span class="line">2. 具有跨平台的特性（不同的操作系统，不同版本的jdk，主要通过jvm虚拟机实现，它会从软件层面屏蔽不同操作系统在底层硬件与指令的区别）</span><br><span class="line">Java通过不同的系统、不同版本、不同位数的java虚拟机（jvm),来屏蔽不同的系统指令集差异而对外体统统一的接口(java AP1),对于我们普通的java开发者而言，只需要按照接口开发即可。如果我系统需要部署到不同的环境时，只需在系统上面按照对应版本的虚拟机即可。</span><br><span class="line">3. 其一共有三大特征: 继承 封装 多态..</span><br><span class="line">4. 有丰富的类库，</span><br><span class="line">5. 有java ee的一套完整的标准</span><br><span class="line">6. 等等......谈谈你对java的理解</span><br></pre></td></tr></table></figure></li>
+<li><p>如何理解面向对象，面向编程</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">怎么说呢，举个例子，比如说洗衣机洗衣服</span><br><span class="line">1. 首先面向过程会将这个任务分解成一系列步骤每个步骤都是一个函数(方法) </span><br><span class="line">第一步打开洗衣机，</span><br><span class="line">第二步放衣服，</span><br><span class="line">第三步放洗衣粉，</span><br><span class="line">第四步清洗，</span><br><span class="line">第五步烘干。</span><br><span class="line">2. 如果说是面向对象呢就会先拆成两个对象 人和洗衣机</span><br><span class="line">人呢 主要做打开洗衣机，放衣服，放洗衣粉，</span><br><span class="line">洗衣机呢，主要负责清洗，烘干</span><br><span class="line">3. 通过这个小例子可以看出 </span><br><span class="line">面向过程更加注重事情的过程，步骤和顺序，</span><br><span class="line">而面向对象更加注重事情的参与者以及参与者所作的事情</span><br><span class="line">所以面向过程会比较直接更加高效</span><br><span class="line">而面向对象更加易于复用、扩展和维护等</span><br></pre></td></tr></table></figure></li>
+<li><p>封装，继承，多态</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">1. 封装</span><br><span class="line"> 封装的意义，在于明确标识出允许外部使用的所有成员函数和数据项，内部细节对外部调用透明，外部调用无需修改或者关心内部实现</span><br><span class="line"> 最经典的案例就是javabean get <span class="built_in">set</span>，orm操作mybatis，hibret等</span><br><span class="line"> 2. 继承：继承基类的方法，并做出自己的改变和/或扩展</span><br><span class="line"> 子类共性的方法或者属性直接使用父类的，而不需要自己再定义，只需扩展自己个性化的</span><br><span class="line"> 3. 多态：基于对象所属类的不同，外部对同一个方法的调用，实际执行的逻辑不同。</span><br><span class="line"> 说明：继承，方法重写，父类引用指向子类对象 </span><br><span class="line"> 无法调用子类特有的功能</span><br></pre></td></tr></table></figure></li>
+<li><p>八大数据类型（二级制位数大小，占用字节）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">1. int(32，4) </span><br><span class="line">2. byte（8，1） </span><br><span class="line">3. short（16，2） </span><br><span class="line">4. long（64，8）</span><br><span class="line">5. <span class="built_in">float</span>（32，4）</span><br><span class="line">6. double（64，8）</span><br><span class="line">7. char（16，2）</span><br><span class="line">8. boolean（1，1）</span><br></pre></td></tr></table></figure></li>
+<li><p>拆箱和装箱</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">1. Integer i=1;//装箱 把基本数据类型转换成对应的包装类型</span><br><span class="line">   int s=i;//拆箱 把包装类型转换成基本类型</span><br><span class="line">   java是面向编程语言而基本数据类型不具有面向对象特性 Integer 可以判断是否为空 int被封装只能被判断是否为0 Intger还可以取max值 最小值，缓存值等 </span><br><span class="line">2. 原始类型转换为对象类型就是装箱，反之就是拆箱。</span><br><span class="line">原始类型</span><br><span class="line">byte,short,char,int,long,<span class="built_in">float</span>,double,boolean</span><br><span class="line">对应的封装类为Byte,Shor,Character,Integer,Long,Float,Double,Boolean</span><br><span class="line">Integer i=7;变量 new Interger对象   </span><br><span class="line">Integer  i=new Integer().valueOf(<span class="string">&quot;7&quot;</span>)=Integer  i=7   </span><br><span class="line">Integer  i=new Integer(7)=7 拆箱</span><br><span class="line">基本类型的比较的是值，而封装类型比较的是对象的地址</span><br><span class="line">Integer a = new Integer(<span class="string">&quot;777&quot;</span>);</span><br><span class="line">System.out.println(a == 777);拆箱的动作</span><br></pre></td></tr></table></figure>
+
+<p>总结：万事开头难，坚持下去，砥砺前行！</p>
+<p>每日一句： <em>Use ideal as paper and diligence as pen to express magnificent youth</em></p>
+<p><em>文章支持:  太阳，月亮和星星</em></p>
+</li>
+</ol>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/11/18/docker%E5%91%BD%E4%BB%A4-linux/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="chexi">
+      <meta itemprop="description" content="越努力，越幸运！">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="澈溪">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/11/18/docker%E5%91%BD%E4%BB%A4-linux/" class="post-title-link" itemprop="url">docker命令-linux</a>
+        </h2>
+
+        <div class="post-meta">
+		
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-11-18 13:18:24" itemprop="dateCreated datePublished" datetime="2021-11-18T13:18:24+08:00">2021-11-18</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-11-23 09:09:44" itemprop="dateModified" datetime="2021-11-23T09:09:44+08:00">2021-11-23</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/linux/" itemprop="url" rel="index"><span itemprop="name">linux</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>9.3k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>8 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="1-基本介绍"><a href="#1-基本介绍" class="headerlink" title="1 . 基本介绍"></a>1 . 基本介绍</h3><ol>
+<li><p>简要&amp;概念</p>
+<blockquote>
+<p>Docker 是一个开源的应用容器引擎，基于 <a target="_blank" rel="noopener" href="https://www.runoob.com/go/go-tutorial.html">Go 语言</a> 并遵从 Apache2.0 协议开源。</p>
+<p>Docker 可以让开发者打包他们的应用以及依赖包到一个轻量级、可移植的容器中，然后发布到任何流行的 Linux 机器上，也可以实现虚拟化。</p>
+<p>容器是完全使用沙箱机制，相互之间不会有任何接口（类似 iPhone 的 app）,更重要的是容器性能开销极低。</p>
+</blockquote>
+</li>
+<li><p>准备&amp;应用</p>
+<blockquote>
+<p>准备：需要学习简单的Linux常用命令即可，本文只介绍简单的docker命令，如需深入学习还请自行查找相关内容资料</p>
+<p>应用：</p>
+<ul>
+<li>Web 应用的自动化打包和发布。</li>
+<li>自动化测试和持续集成、发布。</li>
+<li>在服务型环境中部署和调整数据库或其他的后台应用。</li>
+<li>从头编译或者扩展现有的 OpenShift 或 Cloud Foundry 平台来搭建自己的 PaaS 环境</li>
+</ul>
+</blockquote>
+</li>
+<li><p>命令介绍</p>
+<p>帮助命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">docker version	<span class="comment"># docker版本信息</span></span><br><span class="line">docker info		<span class="comment"># 系统级别的信息，包括镜像和容器的数量</span></span><br><span class="line">docker 命令 --<span class="built_in">help</span> </span><br><span class="line"><span class="comment">#常用linux查找命令</span></span><br><span class="line">ps -ef | grep mysql</span><br><span class="line">ps aux | grep redis-server</span><br><span class="line">netstat -tunple | grep 6379</span><br></pre></td></tr></table></figure>
+
+<p>镜像</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">docker images -q <span class="comment">#查看所有镜像id</span></span><br><span class="line">docker images -a <span class="comment">#查看所有镜像信息</span></span><br><span class="line">docker search <span class="comment">#镜像名称</span></span><br><span class="line">docker pull mysql:5.7 <span class="comment">#拉取镜像指定版本</span></span><br><span class="line">docker pull mysql <span class="comment">#默认拉取镜像最新版本</span></span><br><span class="line">docker rmi -f <span class="comment">#镜像id 删除镜像</span></span><br><span class="line">docker rmi -f <span class="comment">#镜像id，容器id  删除镜像多个</span></span><br><span class="line">docker rmi -f $(docker images -aq) <span class="comment">#删除镜像全部</span></span><br></pre></td></tr></table></figure>
+
+<p>图例查看所有镜像信息</p>
+<img src="/2021/11/18/docker%E5%91%BD%E4%BB%A4-linux/image-20211118163901233.png" class title="镜像信息">
+
+<blockquote>
+<p>目录说明</p>
+<p>REPOSITORY        # 镜像的仓库<br>TAG                # 镜像的标签<br>IMAGE ID        # 镜像的ID<br>CREATED            # 镜像的创建时间<br>SIZE            # 镜像的大小</p>
+<p>命令介绍</p>
+<p>–all , -a        # 列出所有镜像<br>–quiet , -q    # 只显示镜像的id</p>
+</blockquote>
+<p>容器</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#说明： 我们有了镜像才可创建容器，linux，下载一个centos镜像来测试学习</span></span><br><span class="line">docker run -it centos /bin/bash <span class="comment">#（交互模式）运行并进入 exit退出(同时停止) ctrl+p+q不停止退出</span></span><br><span class="line">docker ps -a <span class="comment">#查看全部运行过的容器</span></span><br><span class="line">docker ps -n=? <span class="comment">#查看最近创建运行的容器</span></span><br><span class="line">docker ps -aq <span class="comment">#查看所有运行过的容器编号</span></span><br><span class="line">docker rm <span class="comment">#删除容器id 未运行</span></span><br><span class="line">docker rm -f <span class="comment">#删除容器id 运行中 单个</span></span><br><span class="line">docker rm -f $(docker ps -aq) <span class="comment">#删除全部</span></span><br><span class="line">docker ps -a -q|xargs docekr rm <span class="comment"># 删除所有的容器</span></span><br><span class="line"></span><br><span class="line">docker start 容器id <span class="comment">#启动</span></span><br><span class="line">docker restart 容器id <span class="comment">#重启</span></span><br><span class="line">docker stop 容器id <span class="comment">#停止</span></span><br><span class="line">docker <span class="built_in">kill</span> 容器id <span class="comment">#杀掉</span></span><br></pre></td></tr></table></figure>
+
+<p>图例查看所有运行过的容器信息</p>
+<img src="/2021/11/18/docker%E5%91%BD%E4%BB%A4-linux/image-20211118164045876.png" class title="容器信息">
+
+<p>其他常用命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br></pre></td><td class="code"><pre><span class="line">docker logs -f -t --tail 10 145a6ffb8ecd <span class="comment">#查看日志</span></span><br><span class="line">docker run -d centos <span class="comment">#后台启动如果没有服务会自动关闭</span></span><br><span class="line">docker run -d centos /bin/bash  -c <span class="string">&quot;while true;do echo chexi;sleep 1;done&quot;</span> <span class="comment">#脚本运行</span></span><br><span class="line"></span><br><span class="line">docker top <span class="comment">#容器id 容器进程信息</span></span><br><span class="line">docker inspect 容器id <span class="comment">#容器信息（元数据）</span></span><br><span class="line"></span><br><span class="line">docker <span class="built_in">exec</span> -it 93d760824cb7 /bin/bash <span class="comment">#进入容器（新的）</span></span><br><span class="line">docker attach 93d760824cb7 <span class="comment">#进入正在运行的容器</span></span><br><span class="line"></span><br><span class="line">docker cp 93d760824cb7:/home/test.java /home <span class="comment">#将容器内的文件拷到主机上</span></span><br><span class="line"></span><br><span class="line">docker run -d --name nginx03 -p 3344:80 nginx <span class="comment">#docker部署nginx运行 -d后台运行 -p暴露端口</span></span><br><span class="line"></span><br><span class="line">docker stats <span class="comment">#查看服务器cpu状态 -e参数 环境参数修改</span></span><br><span class="line"></span><br><span class="line">docker run -d --name elasticsearch01 -p 9200:9200 -p 9300:9300 -e <span class="string">&quot;discovery.type=single-node&quot;</span> -e ES_JAVA_OPTS=<span class="string">&quot;Xms64m -M=Xms512m&quot;</span>  elasticsearch:7.12.0 <span class="comment">#增加环境配置限制大小</span></span><br><span class="line"></span><br><span class="line">run -d -p 8088:9000 --restart=always -v /var/run/docker.sock:/var/run/docker.sock --privileged=<span class="literal">true</span> portainer/portainer <span class="comment">#可视化面板 http://服务器ip:8088/</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#联合文件系统</span></span><br><span class="line"></span><br><span class="line">docker commit -a=<span class="string">&quot;chexi&quot;</span> -m<span class="string">&quot;add webapps app&quot;</span> c2d6d2743fc3 tomcat01:1.0</span><br><span class="line"><span class="comment">#提交自定义镜像到docker</span></span><br><span class="line"></span><br><span class="line">docker <span class="comment">#数据卷挂载</span></span><br><span class="line">docker run -it -v /home/ceshi:/home centos /bin/bash</span><br><span class="line"></span><br><span class="line"><span class="comment">#启动mysql</span></span><br><span class="line"><span class="comment">#后台运行 -d  端口映射 -p 卷挂载 配置，数据  环境设置-e 启动密码 设置名字 启动版本</span></span><br><span class="line">docker run -d -p 3310:3306 -v /home/mysql/conf:/etc/mysql/conf.d -v /home/mysql/data:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=123456 --name mysql01 mysql:5.7</span><br><span class="line"></span><br><span class="line">docker run -d -p 3310:3306 -v /home/mysql/conf:/etc/mysql/mysql.conf.d -v /home/mysql/data:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=123456 --name mysql01 mysql:5.7</span><br><span class="line"></span><br><span class="line">docker run -d -p 8080:80 --name nginmx01 -v juming-nginx01:/etc/nginx nginx <span class="comment">#具名挂载</span></span><br><span class="line">docker run -d -p 8080:80 --name nginmx01 -v /etc/nginx nginx <span class="comment">#匿名名挂载</span></span><br><span class="line"><span class="comment">#查看挂载卷名</span></span><br><span class="line">docker volume ls</span><br><span class="line"><span class="comment">#查看挂载卷信息</span></span><br><span class="line">docker volume inspect 卷名字</span><br><span class="line"><span class="comment">#匿名挂载 具名挂载</span></span><br><span class="line"></span><br><span class="line">docker run -d -p 8080:80 --name nginmx01 -v juming-nginx01:/etc/nginx:ro nginx <span class="comment">#只读</span></span><br><span class="line">docker run -d -p 8080:80 --name nginmx01 -v juming-nginx01:/etc/nginx:rw nginx <span class="comment">#可读可写</span></span><br><span class="line"><span class="comment">#查看端口</span></span><br><span class="line">netstat -anp | grep pid</span><br><span class="line"></span><br><span class="line">dockerfile<span class="comment">#构建镜像</span></span><br><span class="line">FROM centos</span><br><span class="line"></span><br><span class="line">VOLUME [<span class="string">&quot;volume01&quot;</span>,<span class="string">&quot;volume02&quot;</span>]</span><br><span class="line"></span><br><span class="line">CMD <span class="built_in">echo</span> <span class="string">&quot;-------------end-------------&quot;</span></span><br><span class="line">CMD /bin/bash</span><br><span class="line"></span><br><span class="line">docker build -f /home/docker-test-volume/dockerfile1 -t chexi/centos:1.0 . <span class="comment">#构建命令</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#容器数据卷挂载--volumes-from /继承</span></span><br><span class="line">docker run -it --name docker02 --volumes-from docker01 chexi/centos:1.0 /bin/bash</span><br><span class="line"><span class="comment">#不单单是数据共享而是数据备份</span></span><br><span class="line"></span><br><span class="line">构建复杂镜像</span><br><span class="line">FROM             <span class="comment">#基础镜镜像，一切从这里开始构建</span></span><br><span class="line">MAINTAINER  <span class="comment">#镜像是谁写的，姓名+邮箱</span></span><br><span class="line">RUN                <span class="comment">#镜像构建的时候需要运行的命令</span></span><br><span class="line">ADD                <span class="comment">#步骤: tomcat镜像，这个tomcat压缩包!添加内容</span></span><br><span class="line">WORKDIR       <span class="comment">#镜像的工作目录</span></span><br><span class="line">VOL UME        <span class="comment">#挂载的目录</span></span><br><span class="line">EXPOSE            <span class="comment">#保留端口配置</span></span><br><span class="line">CMD               <span class="comment">#指定这个容器启动的时候要运行的命令,只有最后一个会生效，可被替代</span></span><br><span class="line">ENTRYPOINT  <span class="comment">#指定这个容器启动的时候要运行的命令,</span></span><br><span class="line">ONBUILD       <span class="comment">#当构建一个被继承DockerFile这个时候就会运行ONBUILD的指令。触发指令.</span></span><br><span class="line">COPY     复制 <span class="comment">#类似ADD，将我们文件拷贝到镜像中</span></span><br><span class="line">ENV环境变化 <span class="comment">#构建的时候设置环境变量!</span></span><br><span class="line"></span><br><span class="line">docker <span class="built_in">history</span> <span class="comment">#镜像id查看镜像构成过程！</span></span><br><span class="line"></span><br><span class="line">CMD 和 ENTRYPOINT  <span class="comment">#区别</span></span><br><span class="line"></span><br><span class="line">FROM centos</span><br><span class="line">CMD [<span class="string">&quot;ls&quot;</span>,<span class="string">&quot;-a&quot;</span>]</span><br><span class="line"></span><br><span class="line">docker build -f dockerfile-test-cmd -t testcmd .</span><br><span class="line"></span><br><span class="line">[root@chexi dockerfile]<span class="comment"># docker run 262aa76d5200</span></span><br><span class="line">.</span><br><span class="line">..</span><br><span class="line">.dockerenv</span><br><span class="line">bin</span><br><span class="line">dev</span><br><span class="line">etc</span><br><span class="line">home</span><br><span class="line">lib</span><br><span class="line">lib64</span><br><span class="line">lost+found</span><br><span class="line">media</span><br><span class="line">mnt</span><br><span class="line">opt</span><br><span class="line">proc</span><br><span class="line">root</span><br><span class="line">run</span><br><span class="line">sbin</span><br><span class="line">srv</span><br><span class="line">sys</span><br><span class="line">tmp</span><br><span class="line">usr</span><br><span class="line"></span><br><span class="line"><span class="comment">#CMD只有最后一个命令会生效不能追加只能替换 docker run 262aa76d5200 -l追加-l报错</span></span><br><span class="line">ENTRYPOINT  <span class="comment">#可追加 docker run 262aa76d5200 -l追加-l正常显示</span></span><br><span class="line"></span><br><span class="line">Tomcat<span class="comment">#镜像</span></span><br><span class="line"><span class="comment">#官方命名 Dockerfile</span></span><br><span class="line">FROM centos <span class="comment">#基础镜像</span></span><br><span class="line"></span><br><span class="line">MAINTAINER chexi&lt;Email&gt; <span class="comment">#作者</span></span><br><span class="line"></span><br><span class="line">COPY readme.txt /usr/<span class="built_in">local</span>/readme.txt <span class="comment">#复制文件到镜像内</span></span><br><span class="line"></span><br><span class="line">ADD apache-tomcat-9.0.38.tar.gz /usr/<span class="built_in">local</span> <span class="comment">#添加镜像功能</span></span><br><span class="line">ADD jdk-11.0.10_linux-x64_bin.tar.gz /usr/<span class="built_in">local</span> <span class="comment">#添加镜像依赖</span></span><br><span class="line"></span><br><span class="line">RUN yum -y install vim <span class="comment">#添加镜像命令</span></span><br><span class="line"></span><br><span class="line">ENV MYPATH /usr/<span class="built_in">local</span> <span class="comment">#镜像环境变量</span></span><br><span class="line">WORKDIR <span class="variable">$MYPATH</span> <span class="comment">#工作目录</span></span><br><span class="line"></span><br><span class="line">ENV JAVA_HOME /usr/<span class="built_in">local</span>/jdk-11.0.10 jdk</span><br><span class="line">ENV CLASSPATH <span class="variable">$JAVA_HOME</span>/lib/dt.jar:<span class="variable">$JAVA_HOMT</span>/lib/tools.jar</span><br><span class="line">ENV CATALINA_HOME /usr/<span class="built_in">local</span>/apache-tomcat-9.0.38</span><br><span class="line">ENV CATALINA_BASH /usr/<span class="built_in">local</span>/apache-tomcat-9.0.38</span><br><span class="line">ENV PATH <span class="variable">$PATH</span>:<span class="variable">$JAVA_HOME</span>/bin:<span class="variable">$CATALINA_HOME</span>/lib:CATALINA_HOME/bin</span><br><span class="line"></span><br><span class="line">EXPOSE 8080</span><br><span class="line">CMD /usr/<span class="built_in">local</span>/apache-tomcat-9.0.38/bin/startup.sh &amp;&amp; tail -F /usr/<span class="built_in">local</span>/apache-tomcat-9.0.38/bin/logs/catalina.out</span><br><span class="line"></span><br><span class="line"><span class="comment">#启动自定义tomcat</span></span><br><span class="line">docker run -d -p 9090:8080 --name chexitomcat -v /home/tomcat/<span class="built_in">test</span>:/usr/<span class="built_in">local</span>/apache-tomcat-9.0.38/webapps/<span class="built_in">test</span> -v /home/tomcat/logs:/src/<span class="built_in">local</span>/apache-tomcat-9.0.38/logs diytomcat</span><br><span class="line"></span><br><span class="line"><span class="comment">#修改镜像名称</span></span><br><span class="line">docker tag ad9bdfc002e7 oracle-12c-ee:latest</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#把镜像提交到dockerhub上</span></span><br><span class="line"><span class="comment">#注册登录</span></span><br><span class="line">docker login -u password</span><br><span class="line"><span class="comment">#提交的镜像必须  docker push docker名称/镜像名称：版本</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#把镜像提交到阿里云</span></span><br><span class="line"><span class="comment">#注册登录</span></span><br><span class="line"><span class="comment">#建库建命名 提交</span></span><br><span class="line">docker login --username=username registry.cn-hangzhou.aliyuncs.com <span class="comment">#登录</span></span><br><span class="line">docker tag [ImageId] registry.cn-hangzhou.aliyuncs.com/chexi/docker:<span class="comment">#[镜像版本号] 改名</span></span><br><span class="line">docker push registry.cn-hangzhou.aliyuncs.com/chexi/docker:<span class="comment">#[镜像版本号] 提交</span></span><br><span class="line"></span><br><span class="line">docker rmi -f $(docker images -aq)</span><br><span class="line"><span class="comment">#移除所有镜像</span></span><br><span class="line"><span class="comment">#移除所有容器</span></span><br><span class="line"><span class="comment">#Docker网络</span></span><br><span class="line"></span><br><span class="line">ip addr <span class="comment">#网卡</span></span><br><span class="line"></span><br><span class="line">docker <span class="built_in">exec</span> -it tomcat01 ip addr</span><br><span class="line"><span class="comment">#查看网卡</span></span><br><span class="line"><span class="comment">#容器的网卡都是一对一对的</span></span><br><span class="line"></span><br><span class="line">docker <span class="built_in">exec</span> -it tomcat02 ping 172.18.0.2</span><br><span class="line"><span class="comment">#启动容器之间可以相互ping通</span></span><br><span class="line">evth-pair <span class="comment">#是一对虚拟设备接口 一段连接协议 一段彼此相连 正因为这个特性可以充当连接桥梁 连接各种网络设备</span></span><br><span class="line">OpenStac docker OVS <span class="comment">#都是通过evth-pair实现的</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#容器删除对应的网桥随即删除</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#容器之间不用容器名ping通 --link</span></span><br><span class="line">docker run -d -P --name tomcat03 --link tomcat02 tomcat</span><br><span class="line">docker <span class="built_in">exec</span> -it tomcat03 ping tomcat02</span><br><span class="line"></span><br><span class="line"> <span class="comment">#docker network ls</span></span><br><span class="line">查看网卡信息</span><br><span class="line"></span><br><span class="line">[root@chexi ~]<span class="comment"># docker exec -it tomcat03 cat /etc/hosts</span></span><br><span class="line">127.0.0.1	localhost</span><br><span class="line">::1	localhost ip6-localhost ip6-loopback</span><br><span class="line">fe00::0	ip6-localnet</span><br><span class="line">ff00::0	ip6-mcastprefix</span><br><span class="line">ff02::1	ip6-allnodes</span><br><span class="line">ff02::2	ip6-allrouters</span><br><span class="line">172.18.0.3	tomcat02 6538d7f5e351</span><br><span class="line">172.18.0.4	ab5f6b8bc810</span><br><span class="line"></span><br><span class="line">自定义网络 --driver bridge 默认桥接 子网  --subnet ip/16/24 -gateway ip网关</span><br><span class="line">docker network create  --driver bridge --subnet ip/16 --gateway ip mynet</span><br><span class="line"></span><br><span class="line"><span class="comment">#把tomcat容器放在自定义网络里可以互相ping</span></span><br><span class="line">docker run -d -P --name tomcat-net01 --net mynet tomcat</span><br><span class="line">docker run -d -P --name tomcat-net02 --net mynet tomcat</span><br><span class="line"></span><br><span class="line">docker <span class="built_in">exec</span> -it tomcat-net01 ping tomcat-net02</span><br><span class="line">docker <span class="built_in">exec</span> -it tomcat-net02 ping tomcat-net01</span><br><span class="line"></span><br><span class="line"><span class="comment">#连接网络命令</span></span><br><span class="line">docker network connect --<span class="built_in">help</span></span><br><span class="line"><span class="comment">#联通docker01的tomcat</span></span><br><span class="line">docker network connect mynet tomcat <span class="comment">#一个容器两个ip地址</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#配置六个redis</span></span><br><span class="line"><span class="keyword">for</span> port <span class="keyword">in</span> $(seq 1 6); \</span><br><span class="line"><span class="keyword">do</span> \</span><br><span class="line">mkdir -p /mydata/redis/node-<span class="variable">$&#123;port&#125;</span>/conf</span><br><span class="line">touch /mydata/redis/node-<span class="variable">$&#123;port&#125;</span>/conf/redis.conf</span><br><span class="line">cat &lt;&lt; <span class="string">EOF &gt;&gt;/mydata/redis/node-$&#123;port&#125;/conf/redis.conf</span></span><br><span class="line"><span class="string">port 6379</span></span><br><span class="line"><span class="string">bind 0.0.0.0</span></span><br><span class="line"><span class="string">cluster-enabled yes</span></span><br><span class="line"><span class="string">cluster-config-file nodes.conf</span></span><br><span class="line"><span class="string">cluster-node-timeout 5000</span></span><br><span class="line"><span class="string">cluster-announce-ip 172.38.0.1$&#123;port&#125;</span></span><br><span class="line"><span class="string">cluster-announce-bus-port 16379</span></span><br><span class="line"><span class="string">appendonly yes</span></span><br><span class="line"><span class="string">EOF</span></span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#启动6个redis容器</span></span><br><span class="line">docker run -p 6376:6379 -p 16376:16379 --name redis-6  \</span><br><span class="line">-v /mydata/redis/node-6/data:/data  \</span><br><span class="line">-v /mydata/redis/node-6/conf/redis.conf:/etc/redis/redis.conf  \</span><br><span class="line">-d --net redis --ip 172.38.0.16 redis:latest redis-server /etc/redis/redis.conf</span><br><span class="line"></span><br><span class="line"><span class="comment">#创建redis集群</span></span><br><span class="line"><span class="comment">#随便进入一个</span></span><br><span class="line">docker <span class="built_in">exec</span> -it redis-1 /bin/sh</span><br><span class="line"></span><br><span class="line">redis-cli --cluster create 172.38.0.11:6379 172.38.0.12:6379 172.38.0.13:6379 172.38.0.14:6379 172.38.0.15:6379 172.38.0.16:6379 --cluster-replicas 1</span><br><span class="line"><span class="comment">#集群创建 yes</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#查看集群信息</span></span><br><span class="line"><span class="comment"># redis-cli -c</span></span><br><span class="line">127.0.0.1:6379&gt; cluster info</span><br><span class="line"></span><br><span class="line"><span class="comment">#节点信息 3主3从</span></span><br><span class="line">127.0.0.1:6379&gt; cluster nodes</span><br><span class="line">4672101d901a66f93bd3627b60d9c0a499b776f9 172.38.0.16:6379@16379 slave da231f5dd918922bfa784c74b15eaf82f61321c8 0 1619080465579 2 connected</span><br><span class="line">f4b914ebc94ce5be3fcacde4b18693e76223bc4e 172.38.0.14:6379@16379 slave 39c916f98f40cd831dced15c3a66c59884d66a79 0 1619080465000 3 connected</span><br><span class="line">e2b011d57c33b35e3a994c0128b14fb168b53f7b 172.38.0.15:6379@16379 slave f1c517a5d54b9501c7b9dd939b0f29ef14f5e775 0 1619080464075 1 connected</span><br><span class="line">da231f5dd918922bfa784c74b15eaf82f61321c8 172.38.0.12:6379@16379 master - 0 1619080464000 2 connected 5461-10922</span><br><span class="line">39c916f98f40cd831dced15c3a66c59884d66a79 172.38.0.13:6379@16379 master - 0 1619080465981 3 connected 10923-16383</span><br><span class="line">f1c517a5d54b9501c7b9dd939b0f29ef14f5e775 172.38.0.11:6379@16379 myself,master - 0 1619080463000 1 connected 0-546</span><br><span class="line"></span><br><span class="line"> <span class="built_in">set</span> q p</span><br><span class="line"><span class="comment">#到3</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#停掉3发现主机挂掉从机接管</span></span><br><span class="line">4672101d901a66f93bd3627b60d9c0a499b776f9 172.38.0.16:6379@16379 slave da231f5dd918922bfa784c74b15eaf82f61321c8 0 1619080874000 2 connected</span><br><span class="line">f4b914ebc94ce5be3fcacde4b18693e76223bc4e 172.38.0.14:6379@16379 myself,master - 0 1619080875000 7 connected 10923-16383</span><br><span class="line">e2b011d57c33b35e3a994c0128b14fb168b53f7b 172.38.0.15:6379@16379 slave f1c517a5d54b9501c7b9dd939b0f29ef14f5e775 0 1619080875000 1 connected</span><br><span class="line">f1c517a5d54b9501c7b9dd939b0f29ef14f5e775 172.38.0.11:6379@16379 master - 0 1619080874000 1 connected 0-5460</span><br><span class="line">da231f5dd918922bfa784c74b15eaf82f61321c8 172.38.0.12:6379@16379 master - 0 1619080876000 2 connected 5461-10922</span><br><span class="line">39c916f98f40cd831dced15c3a66c59884d66a79 172.38.0.13:6379@16379 master,fail - 1619080712641 1619080710123 3 connected</span><br></pre></td></tr></table></figure>
+
+<p>总结：</p>
+<ul>
+<li>镜像（image）<ul>
+<li>Docker镜像就好比是一个模板，可以通过这个模板来创建容器服务，tomcat镜像 ===&gt; run ===&gt; tomcat01容器， 通过这个镜像可以创建多个容器（最终服务运行或者项目运行就是在容器中的）</li>
+</ul>
+</li>
+<li>容器（container）<ul>
+<li>Docker利用容器技术，独立运行一个或者一组应用， 通过镜像来创建的</li>
+<li>启动，停止，删除，基本命令！</li>
+<li>就目前可以把这个容器理解为一个建议的linux系统</li>
+</ul>
+</li>
+</ul>
+<p>每日一句： <em>Tomorrow doesn’t have to be better, but a better tomorrow will come</em></p>
+<p><em>文章支持:  kuangshenshuo</em> </p>
+</li>
+</ol>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/11/18/%E5%8C%BF%E5%90%8D%E5%86%85%E9%83%A8%E7%B1%BB-java/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="chexi">
+      <meta itemprop="description" content="越努力，越幸运！">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="澈溪">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/11/18/%E5%8C%BF%E5%90%8D%E5%86%85%E9%83%A8%E7%B1%BB-java/" class="post-title-link" itemprop="url">匿名内部类-java</a>
+        </h2>
+
+        <div class="post-meta">
+		
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-11-18 09:37:40 / 修改时间：10:32:29" itemprop="dateCreated datePublished" datetime="2021-11-18T09:37:40+08:00">2021-11-18</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/java/" itemprop="url" rel="index"><span itemprop="name">java</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.6k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="1-匿名内部类"><a href="#1-匿名内部类" class="headerlink" title="1.匿名内部类"></a>1.匿名内部类</h3><ol>
+<li><p>介绍</p>
+<blockquote>
+<p>1 . 是内部类的简化写法。它的本质是一个带具体实现的父类或者父接口的匿名的子类对象。</p>
+<p>2 . 匿名内部类会隐式的继承一个类或者实现一个接口，或者说，匿名内部类是一个继承了该类或者实现了该接口的子类匿名对象。</p>
+</blockquote>
+</li>
+<li><p>作用</p>
+<blockquote>
+<p>1 . 匿名内部类可以使你的代码更加简洁，你可以在定义一个类的同时对其进行实例化。<br>2 . 它与局部类很相似，不同的是它没有类名，如果某个局部类你只需要用一次，那么你就可以使用匿名内部类。</p>
+</blockquote>
+</li>
+<li><p>对比</p>
+<blockquote>
+<p>普通类要实现一个接口方法需要</p>
+<p>1.接口</p>
+<p>2.实现类</p>
+<p>3.main</p>
+<p>匿名类则可以省略实现类</p>
+</blockquote>
+</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//接口</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">myInterFace</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">method</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//实现类</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">myInterFaceImp</span> <span class="keyword">implements</span> <span class="title">myInterFace</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">method</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;实现类实现重写了方法&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//main</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//1</span></span><br><span class="line">        myInterFaceImp myInterFaceImp=<span class="keyword">new</span> myInterFaceImp();</span><br><span class="line">        myInterFaceImp.method();</span><br><span class="line">        <span class="comment">//2</span></span><br><span class="line">        myInterFace myInterFace=<span class="keyword">new</span> myInterFaceImp();</span><br><span class="line">        myInterFace.method();</span><br><span class="line">    &#125;</span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//接口</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">myInterFace</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">method</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//匿名内部类实现</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        myInterFace myInterFace=<span class="keyword">new</span> myInterFace() &#123;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">method</span><span class="params">()</span> </span>&#123;</span><br><span class="line">                System.out.println(<span class="string">&quot;我叫匿名内部类A！&quot;</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;;</span><br><span class="line">        myInterFace.method();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//匿名对象实现</span></span><br><span class="line">  <span class="keyword">new</span> myInterFace()&#123;</span><br><span class="line">           <span class="meta">@Override</span></span><br><span class="line">           <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">method</span><span class="params">()</span> </span>&#123;</span><br><span class="line">               System.out.println(<span class="string">&quot;我叫匿名内部类B！&quot;</span>);</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;.method();</span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li><p>说明</p>
+<blockquote>
+<p>解析内部类new 接口名称(){……}<br>1.new 代表创建接口的动作。<br>2.接口名称就是匿名内部类需要实现那个接口。<br>3.{……}实现匿名内部类的内容。</p>
+</blockquote>
+</li>
+<li><p>注意问题</p>
+<blockquote>
+<p>1.匿名内部类在【创建对象】的时候只能使用一次，<br>如果需求不一样，需要多次创建对象调用，而且内容一样的话，就需要单独定于实现类。<br>2.匿名对象在【调用方法】的时候，只能调用唯一一次，<br>如果希望一个对象，多次调用方法，必须给对象起个名字。<br>3.匿名内部类是省略了【实现类/子类名称】，但是匿名对象是省略了对象名称，<br>强调：匿名对象和对象不是一回事！！！</p>
+</blockquote>
+</li>
+</ol>
+<p>总结：通过代码看出，实际上我们的myInterFace是一个接口，本身接口是不能直接new的，但是呢却又发现我们在new的时候，myInterFace这个接口后面带了一对花括号，那么这个就表示实际上我现在new的是这个接口的实现类。但是发现，这个实现类是没有名字的。</p>
+<p>每日一句： <em>Life is not Lin Daiyu, not because of sadness</em></p>
+<p><em>文章支持:  Every One</em></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/11/17/mybatis%E4%B8%AD-%E5%92%8C-mybatis-java/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="chexi">
+      <meta itemprop="description" content="越努力，越幸运！">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="澈溪">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/11/17/mybatis%E4%B8%AD-%E5%92%8C-mybatis-java/" class="post-title-link" itemprop="url">mybatis中#{}和${}-mybatis-java</a>
+        </h2>
+
+        <div class="post-meta">
+		
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-11-17 14:30:04" itemprop="dateCreated datePublished" datetime="2021-11-17T14:30:04+08:00">2021-11-17</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-11-18 17:29:03" itemprop="dateModified" datetime="2021-11-18T17:29:03+08:00">2021-11-18</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/mybatis/" itemprop="url" rel="index"><span itemprop="name">mybatis</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.4k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><em>最近写东西经常和mybatis-xml文件打交道，有时一些非常细小繁琐的字段选择查询经常会用到${}还有常用的#{}这两种传参方式，刚好趁热打铁总结一下</em></p>
+<h3 id="1-基本介绍"><a href="#1-基本介绍" class="headerlink" title="1 . 基本介绍"></a>1 . 基本介绍</h3><blockquote>
+<p>简单介绍一下：Mybatis 的Mapper.xml语句中parameterType向SQL语句传参有两种方式：#{}和${}，#{}可以说是占位符而${}可以说是拼接符。</p>
+<p>我们经常使用的是#{},一般解说是因为这种方式可以防止SQL注入，简单的说#{}这种方式SQL语句是经过预编译的，它是把#{}中间的参数转义成字符串。</p>
+</blockquote>
+<p><em>来看看官方的介绍使用说明</em></p>
+<img src="/2021/11/17/mybatis%E4%B8%AD-%E5%92%8C-mybatis-java/image-20211117145936575.png" class title="官方图例">
+
+<p>从中得到几个重点</p>
+<blockquote>
+<ol>
+<li><p>1 . 区别</p>
+<p>1 . #{} 为参数占位符 ?，即sql 预编译</p>
+<p>　 ${} 为字符串替换，即 sql 拼接</p>
+<p>2 . #{}：动态解析 -&gt; 预编译 -&gt; 执行</p>
+<p>　 ${}：动态解析 -&gt; 编译 -&gt; 执行</p>
+<p>3 . #{} 的变量替换是在DBMS 中</p>
+<p>　 ${} 的变量替换是在 DBMS 外</p>
+<p>4 . 变量替换后，#{} 对应的变量<strong>自动加上</strong>单引号 ‘ ‘</p>
+<p>　 变量替换后，${} 对应的变量<strong>不会加上</strong>单引号 ‘ ‘</p>
+<p>5 . #{} 能防止sql 注入</p>
+<p>　 ${} 不能防止sql 注入</p>
+</li>
+</ol>
+</blockquote>
+<blockquote>
+<ol>
+<li><p>2 . 使用建议</p>
+<p>1 . 不论是单个参数，还是多个参数，一律都建议使用注解@Param(“”)</p>
+<p>2 . 能用 #{} 的地方就用 #{}，不用或少用 ${}</p>
+<p>3 . 表名作参数时，必须用 ${}。</p>
+<p>如：select ∗ from ${tableName}</p>
+<p>4 . ORDERBY 时，必须用 ${} 。</p>
+<p>如：select ∗ from tuser orderby ${columnName}</p>
+<p>5 . 使用 时，要注意何时加或不加单引号，即时，要注意何时加或不加单引号，即{} 和 ‘${}’</p>
+</li>
+</ol>
+</blockquote>
+<ol>
+<li><p>3 . 代码实例</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">#Mybatis在对#&#123;&#125;进行预处理时，会把#&#123;&#125;处理成占位符，实际执行的时候才会把参数替换进去，相当于jdbc的PreparedStatement。</span><br><span class="line">&lt;select id=&quot;select&quot; parameterType=&quot;java.lang.String&quot; resultType=&quot;baseMap&quot;&gt;</span><br><span class="line">    select * from user where name=#&#123;name&#125;</span><br><span class="line">&lt;/select&gt;</span><br><span class="line">#运行对应</span><br><span class="line">select * from user where name=? ?即参数name的值</span><br><span class="line"></span><br><span class="line">#使用$&#123;&#125;拼接占位符</span><br><span class="line">&lt;select id=&quot;select&quot; parameterType=&quot;java.lang.String&quot; resultType=&quot;baseMap&quot;&gt;</span><br><span class="line">    select * from user where name=$&#123;name&#125;</span><br><span class="line">&lt;/select&gt;</span><br><span class="line">#运行对应</span><br><span class="line">select * from user where name=name</span><br><span class="line">#$&#123;&#125; 则只是简单的字符串替换，在动态解析阶段，该 sql 语句会直接将变量值替换进去，这样就有可能会发生sql注入的风险。</span><br></pre></td></tr></table></figure>
+
+<p>总结：#{}占位符而和${}拼接符各有所用，各有优劣，只要用到合适的地方。</p>
+<p>每日一句： <em>I’ve heard a lot of truth, but I still can’t live a good life</em></p>
+<p>文章支持:   <em>所有热衷于Mybatis的博主</em></p>
+</li>
+</ol>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/11/12/%E5%9F%BA%E7%A1%80%E9%98%9F%E5%88%97-%E6%95%B0%E7%BB%84%E7%8E%AF%E5%BD%A2%E9%98%9F%E5%88%97-java/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="chexi">
+      <meta itemprop="description" content="越努力，越幸运！">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="澈溪">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/11/12/%E5%9F%BA%E7%A1%80%E9%98%9F%E5%88%97-%E6%95%B0%E7%BB%84%E7%8E%AF%E5%BD%A2%E9%98%9F%E5%88%97-java/" class="post-title-link" itemprop="url">基础队列_数组环形队列-java</a>
+        </h2>
+
+        <div class="post-meta">
+		
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-11-12 17:48:31 / 修改时间：19:48:53" itemprop="dateCreated datePublished" datetime="2021-11-12T17:48:31+08:00">2021-11-12</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E5%88%9D%E7%BA%A7-java/" itemprop="url" rel="index"><span itemprop="name">算法与数据结构-初级-java</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>4.5k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>4 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="1-基本介绍"><a href="#1-基本介绍" class="headerlink" title="1 . 基本介绍"></a>1 . 基本介绍</h3><p><em>对前面基础数组模拟队列进行优化，充分利用数组，因此可以将数组看做是一个环形，实现主要通过取模的方式。</em></p>
+<ol>
+<li>1.分析说明</li>
+</ol>
+<blockquote>
+<p>1 . 尾索引的下一个为头索引时表示队列满，即将队列容量空出-一个作为约定，这个在做判断队列满的时候需要注意(rear + 1) % maxSize== front满]</p>
+<p>2 . rear == front [空]</p>
+</blockquote>
+<img src="/2021/11/12/%E5%9F%BA%E7%A1%80%E9%98%9F%E5%88%97-%E6%95%B0%E7%BB%84%E7%8E%AF%E5%BD%A2%E9%98%9F%E5%88%97-java/jichuduilie-shuzuhuanxingdulie-java.jpg" class title="图例">
+
+<ol>
+<li>2 . 思路说明</li>
+</ol>
+<blockquote>
+<p>1 . front变量的含义做一个调整 : front 就指向队列的第一个元素, 也就是说arr[front]就是队列的第一个元素，front的初始值= 0。</p>
+<p>2 . rear 变量的含义做一个调整: rear 指向队列的最后一个元素的后一个位置，因为希望空出一 个空间做为约定，rear的初始值=0。</p>
+<p>3 . 当队列满时，条件是(rear + 1) % maxSize=front [满]。</p>
+<p>4 . 对队列为空的条件，rear== front空。</p>
+<p>5 . 当我们这样分析，队列中有效的数据的个数(rear + maxSize - front) % maxSize // rear= 1 front=0。</p>
+<p>6 . 我们就可以在原来的队列上修改得到，一个环形队列。</p>
+</blockquote>
+<ol>
+<li>3 . 代码实现</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.chexi.dsa.queue;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * &lt;p&gt;</span></span><br><span class="line"><span class="comment"> * 数组队列 环形基础队列</span></span><br><span class="line"><span class="comment"> * &lt;/p&gt;</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> chexi</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@since</span> 2021/11/4</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AnnularArrayQueue</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;环形队列测试：&quot;</span>);</span><br><span class="line">        <span class="comment">//初始化创建队列</span></span><br><span class="line">        AnnularArraysQueue arraysQueue = <span class="keyword">new</span> AnnularArraysQueue(<span class="number">4</span>);</span><br><span class="line">        <span class="comment">//定义用户接受参数进行选择菜单</span></span><br><span class="line">        <span class="keyword">char</span> key = <span class="string">&#x27; &#x27;</span>;</span><br><span class="line">        Scanner scanner = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">        <span class="keyword">boolean</span> loop = <span class="keyword">true</span>;</span><br><span class="line">        <span class="keyword">while</span> (loop) &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;请输入选择菜单：&quot;</span>);</span><br><span class="line">            System.out.println(<span class="string">&quot;s(show)：显示队列&quot;</span>);</span><br><span class="line">            System.out.println(<span class="string">&quot;e(exit)：退出程序&quot;</span>);</span><br><span class="line">            System.out.println(<span class="string">&quot;a(add)：添加数据到队列&quot;</span>);</span><br><span class="line">            System.out.println(<span class="string">&quot;g(get)：从队列取出数据&quot;</span>);</span><br><span class="line">            System.out.println(<span class="string">&quot;h(head)：查看队列头的数据&quot;</span>);</span><br><span class="line">            key = scanner.next().charAt(<span class="number">0</span>);</span><br><span class="line">            <span class="keyword">switch</span> (key) &#123;</span><br><span class="line">                <span class="keyword">case</span> <span class="string">&#x27;s&#x27;</span>:</span><br><span class="line">                    arraysQueue.showQueue();</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">case</span> <span class="string">&#x27;e&#x27;</span>:</span><br><span class="line">                    scanner.close();</span><br><span class="line">                    loop = <span class="keyword">false</span>;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">case</span> <span class="string">&#x27;a&#x27;</span>:</span><br><span class="line">                    System.out.println(<span class="string">&quot;请输入一个数字&quot;</span>);</span><br><span class="line">                    <span class="keyword">int</span> value = scanner.nextInt();</span><br><span class="line">                    arraysQueue.addQueue(value);</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">case</span> <span class="string">&#x27;g&#x27;</span>:</span><br><span class="line">                    <span class="keyword">try</span> &#123;</span><br><span class="line">                        <span class="keyword">int</span> queue = arraysQueue.getQueue();</span><br><span class="line">                        System.out.printf(<span class="string">&quot;取出的数据是%d\n&quot;</span>, queue);</span><br><span class="line">                    &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">                        System.out.printf(e.getMessage());</span><br><span class="line">                    &#125;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">case</span> <span class="string">&#x27;h&#x27;</span>:</span><br><span class="line">                    <span class="keyword">try</span> &#123;</span><br><span class="line">                        <span class="keyword">int</span> queue = arraysQueue.headQueue();</span><br><span class="line">                        System.out.printf(<span class="string">&quot;头部的数据是%d\n&quot;</span>, queue);</span><br><span class="line">                    &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">                        System.out.printf(e.getMessage());</span><br><span class="line">                    &#125;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">default</span>:</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.printf(<span class="string">&quot;程序退出！&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 使用数组模拟编写一个数组队列类</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">AnnularArraysQueue</span> </span>&#123;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 数组最大长度</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> maxSize;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 数组头部</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> front;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 数组尾部</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> real;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 队列数组</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span>[] arrays;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 创建队列构造器 初始化队列</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">AnnularArraysQueue</span><span class="params">(<span class="keyword">int</span> arrMaxSize)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//指定队列最大长度</span></span><br><span class="line">        maxSize = arrMaxSize;</span><br><span class="line">        arrays = <span class="keyword">new</span> <span class="keyword">int</span>[maxSize];</span><br><span class="line">        <span class="comment">//指向队列头部 分析出front是指向队列头部的第一个一个位置默认为0</span></span><br><span class="line">        <span class="comment">//front = -1;</span></span><br><span class="line">        <span class="comment">//指向队列尾部 分析除real是指向队列尾部的后一个位置 默认为0</span></span><br><span class="line">        <span class="comment">//real = -1;</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 判断队列是否已满</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isFull</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> (real + <span class="number">1</span>) % maxSize == front;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 判断队列是否为空</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isEmpty</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> front == real;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 添加数据到队列</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">addQueue</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (isFull()) &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;队列已经满了！请申请扩容后在添加！&quot;</span>);</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//直接将数据放入</span></span><br><span class="line">        arrays[real] = n;</span><br><span class="line">        <span class="comment">//放入后将real指针将后以一步</span></span><br><span class="line">        real = (real + <span class="number">1</span>) % maxSize;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 取队列元素</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getQueue</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="comment">//判断队列是否为空</span></span><br><span class="line">        <span class="keyword">if</span> (isEmpty()) &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> RuntimeException(<span class="string">&quot;队列为空，请添加数据到队列后在取！&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//将front对应的元素保存到临时变量中</span></span><br><span class="line">        <span class="comment">//将front向后移动一位 取模后移，考虑越界</span></span><br><span class="line">        <span class="comment">//将临时变量值返回</span></span><br><span class="line">        <span class="keyword">int</span> number = arrays[front];</span><br><span class="line">        front = (front + <span class="number">1</span>) % maxSize;</span><br><span class="line">        <span class="keyword">return</span> number;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 显示队列元素</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">showQueue</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="comment">//判断队列是否为空</span></span><br><span class="line">        <span class="keyword">if</span> (isEmpty()) &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;队列为空，请添加数据到队列后在进行显示！&quot;</span>);</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//队列数据遍历从front开始遍历</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = front; i &lt; front + size(); i++) &#123;</span><br><span class="line">            System.out.printf(<span class="string">&quot;arrays[%d]=%d\n&quot;</span>, i % maxSize, arrays[i % maxSize]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 查看队列头数据</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">headQueue</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="comment">//判断队列是否为空</span></span><br><span class="line">        <span class="keyword">if</span> (isEmpty()) &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> RuntimeException(<span class="string">&quot;队列为空，请添加数据到队列后在进行看队列头数据！&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> arrays[front];</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 查看队列有效数据个数</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">size</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> (real + maxSize - front) % maxSize;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>总结说明：在第一种思路中 : 它的缺陷在于无法重复的使用，只能使用一次，其根本原因在于指针的指向一直在往上走，没有重新调零，如果想要实现第一种思路，可以根据特定条件对指针进行调0，但是这样引申出来的问题太多了，从实用性来说，并不适合，但是从算法性来说的话，这是一个思考的过程，有兴趣可以研究研究。</p>
+<p>在第二种思路中 : 在思路一的方式上进行了巧妙的改变，将数组想象成一个环形的，也就是以环形数组的思维去实现它；在思路一的基础上，对指针进行了一个调整，front指向当前队列第一个元素，rear指向队列的最后一个数据的后一个位置，这样调整的意义在于，我们每次添加一个元素，rear都会改变，让rear指向最后一个元素的后一个位置，因为需要空一个一个空间来作为约定，这个约定具体是干嘛的？我只能说它是该算法的核心思想，是一种比较抽象的思维理念，不好用言语来形容，当rear的指向超过了队列最大存储数的范围，那么就对它进行调0，这么说也不太合适，可以把它想象成一个环形的，无论它怎么走都是在这个环里面，这里巧妙的使用了%，我们知道，一个数%另一个数，其取值范围始终在0到这个数之间，而%【取模】也是环形思想的最重要的部分，当然，环形数组其本质还是数组，当我们进行取值的时候，如果之前存入了值，取出并不代表数组里的元素被取出了，实际上，它是通过不停的对数组进行复制操作来完成存值和取值的。</p>
+<p>每日一句： <em>Action is the cure for fear, and hesitation and procrastination will continue to nourish fear</em></p>
+<p><em>文章支持: <a target="_blank" rel="noopener" href="http://www.atguigu.com/">尚硅谷</a> <a target="_blank" rel="noopener" href="http://www.atguigu.com/">http://www.atguigu.com/</a></em> <em><a target="_blank" rel="noopener" href="https://fufulearningjourna.blog.csdn.net/">一只java小白白的奋斗史</a></em></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/11/12/%E5%9F%BA%E7%A1%80%E9%98%9F%E5%88%97-%E6%95%B0%E7%BB%84%E9%98%9F%E5%88%97-java/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="chexi">
+      <meta itemprop="description" content="越努力，越幸运！">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="澈溪">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/11/12/%E5%9F%BA%E7%A1%80%E9%98%9F%E5%88%97-%E6%95%B0%E7%BB%84%E9%98%9F%E5%88%97-java/" class="post-title-link" itemprop="url">基础队列_数组队列-java</a>
+        </h2>
+
+        <div class="post-meta">
+		
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-11-12 16:32:02 / 修改时间：17:39:13" itemprop="dateCreated datePublished" datetime="2021-11-12T16:32:02+08:00">2021-11-12</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E5%88%9D%E7%BA%A7-java/" itemprop="url" rel="index"><span itemprop="name">算法与数据结构-初级-java</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>3.6k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>3 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="1-基本介绍"><a href="#1-基本介绍" class="headerlink" title="1 . 基本介绍"></a>1 . 基本介绍</h3><ol>
+<li>1.队列介绍</li>
+</ol>
+<blockquote>
+<p>1 . 队列是一个<strong>有序</strong>列表，可以用<strong>数组</strong>或是<strong>链表</strong>实现。</p>
+<p>2 . 遵循<strong>先入先出</strong>（First Input First Output）的原则，也就是<strong>先存入</strong>队列的数据要<strong>先取出</strong>，<strong>后存入</strong>的要<strong>后取出</strong>。</p>
+</blockquote>
+<ol>
+<li>2.数组模拟队列思路</li>
+</ol>
+<blockquote>
+<p>1 . 前面说到队列是个有序列表，若使用数组的结构来储存队列的数据，肯定需要定义最大容量，也就是maxSize！</p>
+<p>2 . 因为队列的输入输出肯定要从队列前端后端来处理操作，因此需要定义两个变量 front、rear，分别控制记录前后端数据的下标，front会跟着数据的输出做改变，而rear则会跟着数据的输入做改变。</p>
+</blockquote>
+<img src="/2021/11/12/%E5%9F%BA%E7%A1%80%E9%98%9F%E5%88%97-%E6%95%B0%E7%BB%84%E9%98%9F%E5%88%97-java/jichuduilie-shuzuduilie-java.jpg" class title="图例">
+
+<blockquote>
+<p>3 . 我们需要定制一系列方法保障我们这个队列正常运行，当我们入队（存数据）时需要入队操作，称之为 “addQueue” , 分析 “addQueue” 主要进行两个步骤：</p>
+<ol>
+<li>3.1 . 将指针 rear 往后移一位 即 rear+1,说明：rear==front 队列数组为空。</li>
+<li>3.2 .  判断队列是否已满，若指针 rear 小于队列里的最大小标 maxSize-1 表示队列未满，则将数据放到 rear 所指的数组元素中，否则数组队列已满，rear == maxSize-1。</li>
+</ol>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.chexi.dsa.queue;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * &lt;p&gt;</span></span><br><span class="line"><span class="comment"> * 数组队列 基础队列 只能使用一次</span></span><br><span class="line"><span class="comment"> * &lt;/p&gt;</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> chexi</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@since</span> 2021/11/4</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ArrayQueue</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//初始化创建队列</span></span><br><span class="line">        ArraysQueue arraysQueue = <span class="keyword">new</span> ArraysQueue(<span class="number">3</span>);</span><br><span class="line">        <span class="comment">//定义用户接受参数进行选择菜单</span></span><br><span class="line">        <span class="keyword">char</span> key=<span class="string">&#x27; &#x27;</span>;</span><br><span class="line">        Scanner scanner = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">        <span class="keyword">boolean</span> loop=<span class="keyword">true</span>;</span><br><span class="line">        <span class="keyword">while</span> (loop)&#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;请输入选择菜单：&quot;</span>);</span><br><span class="line">            System.out.println(<span class="string">&quot;s(show)：显示队列&quot;</span>);</span><br><span class="line">            System.out.println(<span class="string">&quot;e(exit)：退出程序&quot;</span>);</span><br><span class="line">            System.out.println(<span class="string">&quot;a(add)：添加数据到队列&quot;</span>);</span><br><span class="line">            System.out.println(<span class="string">&quot;g(get)：从队列取出数据&quot;</span>);</span><br><span class="line">            System.out.println(<span class="string">&quot;h(head)：查看队列头的数据&quot;</span>);</span><br><span class="line">            key=scanner.next().charAt(<span class="number">0</span>);</span><br><span class="line">            <span class="keyword">switch</span> (key)&#123;</span><br><span class="line">                <span class="keyword">case</span> <span class="string">&#x27;s&#x27;</span>:</span><br><span class="line">                    arraysQueue.showQueue();</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">case</span> <span class="string">&#x27;e&#x27;</span>:</span><br><span class="line">                    scanner.close();</span><br><span class="line">                    loop=<span class="keyword">false</span>;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">case</span> <span class="string">&#x27;a&#x27;</span>:</span><br><span class="line">                    System.out.println(<span class="string">&quot;请输入一个数字&quot;</span>);</span><br><span class="line">                    <span class="keyword">int</span> value = scanner.nextInt();</span><br><span class="line">                    arraysQueue.addQueue(value);</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">case</span> <span class="string">&#x27;g&#x27;</span>:</span><br><span class="line">                    <span class="keyword">try</span> &#123;</span><br><span class="line">                        <span class="keyword">int</span> queue = arraysQueue.getQueue();</span><br><span class="line">                        System.out.printf(<span class="string">&quot;取出的数据是%d\n&quot;</span>,queue);</span><br><span class="line">                    &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">                        System.out.printf(e.getMessage());</span><br><span class="line">                    &#125;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">case</span> <span class="string">&#x27;h&#x27;</span>:</span><br><span class="line">                    <span class="keyword">try</span> &#123;</span><br><span class="line">                        <span class="keyword">int</span> queue = arraysQueue.headQueue();</span><br><span class="line">                        System.out.printf(<span class="string">&quot;头部的数据是%d\n&quot;</span>,queue);</span><br><span class="line">                    &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">                        System.out.printf(e.getMessage());</span><br><span class="line">                    &#125;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">default</span>:</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.printf(<span class="string">&quot;程序退出！&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 使用数组模拟编写一个数组队列类</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ArraysQueue</span> </span>&#123;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 数组最大长度</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> maxSize;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 数组头部</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> front;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 数组尾部</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> real;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 队列数组</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span>[] arrays;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 创建队列构造器 初始化队列</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">ArraysQueue</span><span class="params">(<span class="keyword">int</span> arrMaxSize)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//指定队列最大长度</span></span><br><span class="line">        maxSize = arrMaxSize;</span><br><span class="line">        arrays = <span class="keyword">new</span> <span class="keyword">int</span>[maxSize];</span><br><span class="line">        <span class="comment">//指向队列头部 分析出front是指向队列头部的前一个位置</span></span><br><span class="line">        front = -<span class="number">1</span>;</span><br><span class="line">        <span class="comment">//指向队列尾部 分析除real是指向队列尾部的位置，即队列最后一个元素位置下标</span></span><br><span class="line">        real = -<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 判断队列是否已满</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isFull</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> real == maxSize-<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 判断队列是否为空</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isEmpty</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> front == real;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 添加数据到队列</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">addQueue</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (isFull()) &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;队列已经满了！请申请扩容后在添加！&quot;</span>);</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        real++;</span><br><span class="line">        arrays[real] = n;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 取队列元素</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getQueue</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="comment">//判断队列是否为空</span></span><br><span class="line">        <span class="keyword">if</span> (isEmpty()) &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> RuntimeException(<span class="string">&quot;队列为空，请添加数据到队列后在取！&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        front++;</span><br><span class="line">        <span class="keyword">return</span> arrays[front];</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 显示队列元素</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">showQueue</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="comment">//判断队列是否为空</span></span><br><span class="line">        <span class="keyword">if</span> (isEmpty()) &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;队列为空，请添加数据到队列后在进行显示！&quot;</span>);</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//队列数据遍历</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; arrays.length; i++) &#123;</span><br><span class="line">            System.out.printf(<span class="string">&quot;arrays[%d]=%d\n&quot;</span>, i, arrays[i]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 查看队列头数据</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">headQueue</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="comment">//判断队列是否为空</span></span><br><span class="line">        <span class="keyword">if</span> (isEmpty()) &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> RuntimeException(<span class="string">&quot;队列为空，请添加数据到队列后在进行看队列头数据！&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> arrays[front + <span class="number">1</span>];</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>总结说明：此FIFO目前只是个简单的基础队列，只能只用一次，后续继续改进环形。</p>
+<p>每日一句:  <em>If you don’t try to do something beyond your ability, you will never grow</em></p>
+<p><em>文章支持: <a target="_blank" rel="noopener" href="http://www.atguigu.com/">尚硅谷</a> <a target="_blank" rel="noopener" href="http://www.atguigu.com/">http://www.atguigu.com/</a></em></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/11/10/%E7%A8%80%E7%96%8F%E6%95%B0%E7%BB%84%E4%B8%8E%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84-java/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="chexi">
+      <meta itemprop="description" content="越努力，越幸运！">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="澈溪">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/11/10/%E7%A8%80%E7%96%8F%E6%95%B0%E7%BB%84%E4%B8%8E%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84-java/" class="post-title-link" itemprop="url">稀疏数组与二维数组-java</a>
+        </h2>
+
+        <div class="post-meta">
+		
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-11-10 16:54:17" itemprop="dateCreated datePublished" datetime="2021-11-10T16:54:17+08:00">2021-11-10</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-11-12 17:25:43" itemprop="dateModified" datetime="2021-11-12T17:25:43+08:00">2021-11-12</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E5%88%9D%E7%BA%A7-java/" itemprop="url" rel="index"><span itemprop="name">算法与数据结构-初级-java</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>4.5k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>4 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="1-基本介绍"><a href="#1-基本介绍" class="headerlink" title="1 . 基本介绍"></a>1 . 基本介绍</h3><img src="/2021/11/10/%E7%A8%80%E7%96%8F%E6%95%B0%E7%BB%84%E4%B8%8E%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84-java/image-20211111091223408.png" class title="图例"> 
+
+<blockquote>
+<p><em>当一个数组中大部分元素为0，或者为同一个值得数组时，可以使用稀疏数组来保存该数组。</em></p>
+</blockquote>
+<ol>
+<li>1 . 处理方法</li>
+</ol>
+<blockquote>
+<p>1 . 记录数组中<strong>一共有几行几列，有多少个不同的</strong>值</p>
+<p>2 . 把具有不同值得元素得行列及值记录在一个小规模得数组中从而<strong>缩小程序</strong>得规模</p>
+</blockquote>
+<ol>
+<li>2 . 应用实例</li>
+</ol>
+<blockquote>
+<p>1 . 使用稀疏数组来保存类似于棋盘，地图等二维数组数据等等</p>
+<p>2 . 把二维数组转换稀疏数组存盘，并且可以读取恢复原来得二维数组</p>
+</blockquote>
+<ol>
+<li>3 . 代码实现</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.chexi.dsa.sparsearray;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.*;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * &lt;p&gt;</span></span><br><span class="line"><span class="comment"> * 完成稀疏数组读写转换</span></span><br><span class="line"><span class="comment"> * &lt;/p&gt;</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> chexi</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@since</span> 2021/11/3</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SparseArrayIO</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//建立一个二维数组 长度11*11</span></span><br><span class="line">        <span class="keyword">int</span>[][] chessArray = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">11</span>][<span class="number">11</span>];</span><br><span class="line">        <span class="comment">//初始化二维数组</span></span><br><span class="line">        chessArray[<span class="number">2</span>][<span class="number">3</span>] = <span class="number">1</span>;</span><br><span class="line">        chessArray[<span class="number">3</span>][<span class="number">2</span>] = <span class="number">2</span>;</span><br><span class="line">        chessArray[<span class="number">3</span>][<span class="number">4</span>] = <span class="number">1</span>;</span><br><span class="line">        chessArray[<span class="number">4</span>][<span class="number">3</span>] = <span class="number">2</span>;</span><br><span class="line">        <span class="comment">//遍历二维数组 看是否正常</span></span><br><span class="line">        System.out.println(<span class="string">&quot;二维数组：~~~~~~~~~~~~~~~~~~~~&quot;</span>);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span>[] ints : chessArray) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> anInt : ints) &#123;</span><br><span class="line">                System.out.printf(<span class="string">&quot;%d\t&quot;</span>, anInt);</span><br><span class="line">            &#125;</span><br><span class="line">            System.out.println();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//拿到二维数组的有效数字个数 以便于创建稀疏数组</span></span><br><span class="line">        <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; chessArray.length; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; chessArray.length; j++) &#123;</span><br><span class="line">                <span class="keyword">if</span> (chessArray[i][j] &gt; <span class="number">0</span>) &#123;</span><br><span class="line">                    sum++;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//创建稀疏数组 初始化稀疏数组</span></span><br><span class="line">        <span class="keyword">int</span>[][] sparseArray = <span class="keyword">new</span> <span class="keyword">int</span>[sum + <span class="number">1</span>][<span class="number">3</span>];</span><br><span class="line">        sparseArray[<span class="number">0</span>][<span class="number">0</span>] = chessArray.length;</span><br><span class="line">        sparseArray[<span class="number">0</span>][<span class="number">1</span>] = chessArray.length;</span><br><span class="line">        sparseArray[<span class="number">0</span>][<span class="number">2</span>] = sum;</span><br><span class="line">        <span class="comment">//再次遍历二维数组对有效数字进行稀疏数组赋值</span></span><br><span class="line">        <span class="comment">//定义 计算有效数组及时个数 便于定位稀疏数组行数下标</span></span><br><span class="line">        <span class="keyword">int</span> index = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; chessArray.length; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; chessArray.length; j++) &#123;</span><br><span class="line">                <span class="keyword">if</span> (chessArray[i][j] &gt; <span class="number">0</span>) &#123;</span><br><span class="line">                    index++;</span><br><span class="line">                    sparseArray[index][<span class="number">0</span>] = i;</span><br><span class="line">                    sparseArray[index][<span class="number">1</span>] = j;</span><br><span class="line">                    sparseArray[index][<span class="number">2</span>] = chessArray[i][j];</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//遍历稀疏数组看是否转换成功</span></span><br><span class="line">        System.out.println(<span class="string">&quot;稀疏数组：~~~~~~~~~~~~~~~~~~~~&quot;</span>);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span>[] ints : sparseArray) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> anInt : ints) &#123;</span><br><span class="line">                System.out.printf(<span class="string">&quot;%d\t&quot;</span>, anInt);</span><br><span class="line">            &#125;</span><br><span class="line">            System.out.println();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//转换成功对稀疏数组进行写入保存</span></span><br><span class="line">        write(sparseArray);</span><br><span class="line">        <span class="comment">//读取存放稀疏数组文件</span></span><br><span class="line">        <span class="keyword">int</span>[][] read = read(<span class="string">&quot;E:&quot;</span> + File.separator + <span class="string">&quot;leetcode&quot;</span> + File.separator + <span class="string">&quot;IOFile&quot;</span> + File.separator + <span class="string">&quot;chexi.txt&quot;</span>);</span><br><span class="line">        <span class="comment">//将读取到的稀疏数组转为二维数组 拿到稀疏数组的组头二维数组结构</span></span><br><span class="line">        <span class="keyword">int</span>[][] tdArray = <span class="keyword">new</span> <span class="keyword">int</span>[read[<span class="number">0</span>][<span class="number">0</span>]][read[<span class="number">0</span>][<span class="number">1</span>]];</span><br><span class="line">        <span class="comment">//遍历创建空二维数组 看是否正常</span></span><br><span class="line">        System.out.println(<span class="string">&quot;空二维数组：~~~~~~~~~~~~~~~~~~~~&quot;</span>);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span>[] ints : tdArray) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> anInt : ints) &#123;</span><br><span class="line">                System.out.printf(<span class="string">&quot;%d\t&quot;</span>, anInt);</span><br><span class="line">            &#125;</span><br><span class="line">            System.out.println();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//遍历稀疏数组对二维数组进行赋值</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; read.length; i++) &#123;</span><br><span class="line">            tdArray[read[i][<span class="number">0</span>]][read[i][<span class="number">1</span>]] = read[i][<span class="number">2</span>];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//再次遍历赋值后二维数组 看是否正常</span></span><br><span class="line">        System.out.println(<span class="string">&quot;赋值后二维数组：~~~~~~~~~~~~~~~~~~~~&quot;</span>);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span>[] ints : tdArray) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> anInt : ints) &#123;</span><br><span class="line">                System.out.printf(<span class="string">&quot;%d\t&quot;</span>, anInt);</span><br><span class="line">            &#125;</span><br><span class="line">            System.out.println();</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(<span class="string">&quot;大功告成！&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 写入稀疏数组</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> sparseArray</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">write</span><span class="params">(<span class="keyword">int</span>[][] sparseArray)</span> </span>&#123;</span><br><span class="line">        File file = <span class="keyword">new</span> File(<span class="string">&quot;E:&quot;</span> + File.separator + <span class="string">&quot;leetcode&quot;</span> + File.separator + <span class="string">&quot;IOFile&quot;</span> + File.separator + <span class="string">&quot;chexi.txt&quot;</span>);</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="keyword">if</span> (!file.exists()) &#123;</span><br><span class="line">                file.createNewFile();</span><br><span class="line">            &#125;</span><br><span class="line">            OutputStream outputStream = <span class="keyword">new</span> FileOutputStream(file);</span><br><span class="line">            <span class="comment">//遍历稀疏数组 拿到值存放到字符串中</span></span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; sparseArray.length; i++) &#123;</span><br><span class="line">                String context = sparseArray[i][<span class="number">0</span>] + <span class="string">&quot; &quot;</span> + sparseArray[i][<span class="number">1</span>] + <span class="string">&quot; &quot;</span> + sparseArray[i][<span class="number">2</span>] + <span class="string">&quot;,\r\n&quot;</span>;</span><br><span class="line">                <span class="comment">//换行写入文件中</span></span><br><span class="line">                outputStream.write(context.getBytes());</span><br><span class="line">            &#125;</span><br><span class="line">            outputStream.close();</span><br><span class="line">            System.out.println(<span class="string">&quot;写入成功&quot;</span>);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 读取稀疏数组 转换为二维数组</span></span><br><span class="line"><span class="comment">     * File.separator 其实 File.separator 的作用相当于 &#x27; \  &#x27; 在 windows 中 文件文件分隔符 用 &#x27; \ &#x27; 或者 &#x27; / &#x27; 都可以</span></span><br><span class="line"><span class="comment">     * &lt;p&gt;</span></span><br><span class="line"><span class="comment">     * 所以用 File.separator 保证了在任何系统下不会出错。</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> filePath</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span>[][] read(String filePath) &#123;</span><br><span class="line">        File file = <span class="keyword">new</span> File(filePath);</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            InputStream inputStream = <span class="keyword">new</span> FileInputStream(file);</span><br><span class="line">            <span class="keyword">byte</span>[] bytes = <span class="keyword">new</span> <span class="keyword">byte</span>[<span class="number">1024</span>];</span><br><span class="line">            <span class="keyword">int</span> len = <span class="number">0</span>;</span><br><span class="line">            String str = <span class="keyword">new</span> String();</span><br><span class="line">            <span class="keyword">while</span> ((len = inputStream.read(bytes)) != -<span class="number">1</span>) &#123;</span><br><span class="line">                <span class="comment">//解析数组去除换行符</span></span><br><span class="line">                str = <span class="keyword">new</span> String(bytes, <span class="number">0</span>, len).replaceAll(<span class="string">&quot;\\r|\\n&quot;</span>, <span class="string">&quot;&quot;</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">//解析数组到稀疏数组</span></span><br><span class="line">            String[] split = str.split(<span class="string">&quot;,&quot;</span>);</span><br><span class="line">            <span class="keyword">int</span>[][] tdArray = <span class="keyword">new</span> <span class="keyword">int</span>[split.length][<span class="number">3</span>];</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; split.length; i++) &#123;</span><br><span class="line">                String[] s1 = split[i].split(<span class="string">&quot; &quot;</span>);</span><br><span class="line">                tdArray[i][<span class="number">0</span>] = Integer.valueOf(s1[<span class="number">0</span>]);</span><br><span class="line">                tdArray[i][<span class="number">1</span>] = Integer.valueOf(s1[<span class="number">1</span>]);</span><br><span class="line">                tdArray[i][<span class="number">2</span>] = Integer.valueOf(s1[<span class="number">2</span>]);</span><br><span class="line">            &#125;</span><br><span class="line">            System.out.println(<span class="string">&quot;读取成功:&quot;</span>);</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; tdArray.length; i++) &#123;</span><br><span class="line">                System.out.printf(<span class="string">&quot;%d\t%d\t%d\t\n&quot;</span>, tdArray[i][<span class="number">0</span>], tdArray[i][<span class="number">1</span>], tdArray[i][<span class="number">2</span>]);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span> tdArray;</span><br><span class="line">        &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>总结：任何复杂程序只要经过研究处理，都会简单，实用化！</p>
+<p>每日一句： <em>Children without umbrellas should run hard!</em></p>
+<p><em>文章支持: <a target="_blank" rel="noopener" href="http://www.atguigu.com/">尚硅谷</a> <a target="_blank" rel="noopener" href="http://www.atguigu.com/">http://www.atguigu.com/</a></em></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/11/10/AnotherDay/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="chexi">
+      <meta itemprop="description" content="越努力，越幸运！">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="澈溪">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/11/10/AnotherDay/" class="post-title-link" itemprop="url">anotherDay</a>
+        </h2>
+
+        <div class="post-meta">
+		
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-11-10 15:08:58" itemprop="dateCreated datePublished" datetime="2021-11-10T15:08:58+08:00">2021-11-10</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-11-11 10:55:21" itemprop="dateModified" datetime="2021-11-11T10:55:21+08:00">2021-11-11</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/anotherDay/" itemprop="url" rel="index"><span itemprop="name">anotherDay</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>111</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="A-When-you-open-your-eyes-be-glad-for-the-day"><a href="#A-When-you-open-your-eyes-be-glad-for-the-day" class="headerlink" title="A . When you open your eyes be glad for the day !"></a>A . When you open your eyes be glad for the day !</h1><h1 id="B-Make-sure-you-have-ample-time-to-prepare-for-the-new-day-ahead！"><a href="#B-Make-sure-you-have-ample-time-to-prepare-for-the-new-day-ahead！" class="headerlink" title="B . Make sure you have ample time to prepare for the new day ahead！"></a>B . Make sure you have ample time to prepare for the new day ahead！</h1><h1 id="C-Do-you-get-me"><a href="#C-Do-you-get-me" class="headerlink" title="C . Do you get me !"></a>C . Do you get me !</h1><p>​                                                     <em>澈溪，因你而生</em></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="chexi"
+      src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">chexi</p>
+  <div class="site-description" itemprop="description">越努力，越幸运！</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">9</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/weichexi" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;weichexi" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:chexi_0714@163.com" title="E-Mail → mailto:chexi_0714@163.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.csdn.net/%E7%9D%80%E7%9C%9F" title="CSDN → https:&#x2F;&#x2F;www.csdn.net&#x2F;着真" rel="noopener" target="_blank"><i class="fa codiepie fa-fw"></i>CSDN</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      链接网站
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://www.baidu.com/" title="https:&#x2F;&#x2F;www.baidu.com&#x2F;" rel="noopener" target="_blank">百度</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://www.bilibili.com/" title="https:&#x2F;&#x2F;www.bilibili.com&#x2F;" rel="noopener" target="_blank">哔哩哔哩</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">chexi</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="站点总字数">30k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">28 分钟</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user 访问次数"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye 总访问量次"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  
+  <script color='0,0,255' opacity='0.5' zIndex='-1' count='99' src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+
+</body>
+</html>
